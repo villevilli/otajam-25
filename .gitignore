@@ -1,4 +1,9 @@
 # Godot 4+ specific ignores
 .godot/
 /android/
-.vscode/
+
+#vscode
+.vscode/**/*
+
+#allow vscode recommended extensions
+!.vscode/extensions.json
