@@ -1,0 +1,31 @@
+[gd_scene load_steps=7 format=3 uid="uid://c8spimt34t3fs"]
+
+[ext_resource type="PackedScene" uid="uid://bnch2ki81nahy" path="res://quests/dialog_system/dialog_system.tscn" id="1_fxd4t"]
+[ext_resource type="Script" path="res://quests/dialog_system/end_dialog.gd" id="2_fsmyv"]
+[ext_resource type="Script" path="res://quests/dialog_system/straight_dialog.gd" id="3_1t1ef"]
+
+[sub_resource type="Resource" id="Resource_xxslh"]
+script = ExtResource("2_fsmyv")
+dialog_text = "Goodbye"
+
+[sub_resource type="Resource" id="Resource_4p8u3"]
+script = ExtResource("3_1t1ef")
+dialog_text = "Dolor Sit Amet"
+next_dialog = SubResource("Resource_xxslh")
+
+[sub_resource type="Resource" id="Resource_fcdkv"]
+script = ExtResource("3_1t1ef")
+dialog_text = "Hello World"
+next_dialog = SubResource("Resource_4p8u3")
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="DialogSystem" parent="." instance=ExtResource("1_fxd4t")]
+layout_mode = 1
+current_dialog = SubResource("Resource_fcdkv")

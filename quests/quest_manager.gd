@@ -1,4 +1,4 @@
-extends Resource
+extends Node
 class_name quest_manager
 
 ## This should not be edited manually
