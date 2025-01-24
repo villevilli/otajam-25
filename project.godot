@@ -16,7 +16,7 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-QuestManager="*res://Quests/QuestManager/quest_manager.gd"
+QuestManager="*res://quests/quest_manager/quest_manager.gd"
 
 [debug]
 
