@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://famg5e8r235r"]
+
+[ext_resource type="Script" path="res://levels/level_components/camera/camera_follow.gd" id="1_dxvc3"]
+
+[node name="Camera" type="Camera2D"]
+position = Vector2(375, 207)
+zoom = Vector2(0.6, 0.6)
+script = ExtResource("1_dxvc3")

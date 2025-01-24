@@ -1,12 +1,32 @@
-[gd_resource type="TileSet" load_steps=3 format=3 uid="uid://d3b4rsnwb4ahw"]
+[gd_resource type="TileSet" load_steps=7 format=3 uid="uid://d3b4rsnwb4ahw"]
 
 [ext_resource type="Texture2D" uid="uid://da0aagtqi1ih4" path="res://assets/levels/placeholder_tile.png" id="1_dnvrn"]
+[ext_resource type="Texture2D" uid="uid://dkyilihfhghnf" path="res://assets/levels/placeholder_tile_impassable.png" id="2_imbrv"]
+[ext_resource type="Texture2D" uid="uid://d2sf851s56aso" path="res://assets/levels/worldborder.png" id="3_egsde"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2tjjl"]
 texture = ExtResource("1_dnvrn")
 texture_region_size = Vector2i(128, 128)
 0:0/0 = 0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ed865"]
+texture = ExtResource("2_imbrv")
+texture_region_size = Vector2i(128, 128)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(0, -64, 64, 0, 0, 64, -64, 0)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ko4we"]
+texture = ExtResource("3_egsde")
+texture_region_size = Vector2i(128, 128)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
+0:0/0/physics_layer_1/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
+
 [resource]
 tile_size = Vector2i(128, 128)
+physics_layer_0/collision_layer = 1
+physics_layer_1/collision_layer = 3
+physics_layer_1/collision_mask = 3
 sources/0 = SubResource("TileSetAtlasSource_2tjjl")
+sources/1 = SubResource("TileSetAtlasSource_ed865")
+sources/2 = SubResource("TileSetAtlasSource_ko4we")
