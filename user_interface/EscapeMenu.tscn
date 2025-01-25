@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://user_interface/escape_menu.gd" id="1_2m8kd"]
 [ext_resource type="PackedScene" uid="uid://61a2nwetbqyf" path="res://user_interface/QuestList/QuestList.tscn" id="1_drder"]
-[ext_resource type="PackedScene" uid="uid://c48d8tb5e50x6" path="res://user_interface/ExitMenu.tscn" id="2_t5jkl"]
+[ext_resource type="PackedScene" uid="uid://cwhjvky2cg44b" path="res://user_interface/ExitMenu.tscn" id="2_t5jkl"]
 
 [node name="EscapeMenu" type="Control"]
 process_mode = 3

@@ -14,6 +14,7 @@ func _on_load_game_pressed() -> void:
 	file_dialog.access = FileDialog.ACCESS_USERDATA
 	file_dialog.popup_exclusive_centered(self, Vector2i(500, 500))
 	file_dialog.current_path = "user://saves/"
+	file_dialog.title = "Load Save"
 	file_dialog.filters.append("*.json")
 	file_dialog.file_mode = FileDialog.FILE_MODE_OPEN_FILE
 	file_dialog.file_selected.connect(_file_selected)

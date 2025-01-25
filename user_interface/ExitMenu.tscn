@@ -2,14 +2,18 @@
 
 [ext_resource type="Script" path="res://user_interface/exit_menu.gd" id="1_ct8je"]
 
-[node name="ExitMenu" type="Control"]
-layout_mode = 3
-anchors_preset = 0
+[node name="ExitMenu" type="VBoxContainer"]
+offset_right = 99.0
+offset_bottom = 66.0
 script = ExtResource("1_ct8je")
 metadata/_tab_index = 1
 
 [node name="ExitButton" type="Button" parent="."]
-layout_mode = 0
-offset_right = 8.0
-offset_bottom = 8.0
+unique_name_in_owner = true
+layout_mode = 2
 text = "Close Game"
+
+[node name="SaveButton" type="Button" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Save Game"
