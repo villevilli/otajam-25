@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=4 uid="uid://d2npw31lq5kvy"]
+[gd_scene load_steps=9 format=4 uid="uid://bhdg4k234kbld"]
 
 [ext_resource type="Script" path="res://levels/level.gd" id="1_1ajge"]
 [ext_resource type="TileSet" uid="uid://d3b4rsnwb4ahw" path="res://assets/levels/level_tiles.tres" id="2_0e641"]
@@ -6,8 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://famg5e8r235r" path="res://levels/level_components/camera/camera.tscn" id="4_gmcjv"]
 [ext_resource type="PackedScene" uid="uid://b42c3rxpw863l" path="res://levels/level_components/level_connector/level_connector.tscn" id="5_t35fr"]
 [ext_resource type="PackedScene" uid="uid://dm8an5cotosta" path="res://levels/level_components/enter_dialog_area/dialog_area.tscn" id="6_p1fnk"]
-[ext_resource type="Resource" uid="uid://bjqxluuoedt75" path="res://levels/levels/ChararaDialogueOne.tres" id="7_n2d47"]
-[ext_resource type="PackedScene" path="res://user_interface/EscapeMenu.tscn" id="8_682ln"]
+[ext_resource type="Resource" uid="uid://c7tyh4qlc2vmm" path="res://levels/levels/ChararaDialogueOne.tres" id="7_n2d47"]
+[ext_resource type="PackedScene" uid="uid://b4xv0neyy1tdi" path="res://user_interface/EscapeMenu.tscn" id="8_682ln"]
 
 [node name="ExampleLevel" type="Node2D"]
 script = ExtResource("1_1ajge")
@@ -44,11 +44,11 @@ target_level_name = "example_level2"
 spawn_pos_name = "entry1"
 metadata/target_entry = ""
 
-[node name="DialogArea" parent="." instance=ExtResource("6_p1fnk")]
-position = Vector2(832, 448)
+[node name="ChararaDialogueOneArea" parent="." instance=ExtResource("6_p1fnk")]
+position = Vector2(838, 638)
 dialog = ExtResource("7_n2d47")
 excluded_by_quest = &"GetChararasColoursBack"
-collider_size = Vector2(128, 512)
+collider_size = Vector2(400, 1600)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
