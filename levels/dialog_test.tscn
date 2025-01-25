@@ -1,22 +1,17 @@
-[gd_scene load_steps=7 format=3 uid="uid://c8spimt34t3fs"]
+[gd_scene load_steps=6 format=3 uid="uid://c8spimt34t3fs"]
 
 [ext_resource type="PackedScene" uid="uid://bnch2ki81nahy" path="res://quests/dialog_system/dialog_system.tscn" id="1_fxd4t"]
-[ext_resource type="Script" path="res://quests/dialog_system/end_dialog.gd" id="2_fsmyv"]
-[ext_resource type="Script" path="res://quests/dialog_system/straight_dialog.gd" id="3_1t1ef"]
+[ext_resource type="Script" path="res://quests/dialog_system/end_dialog.gd" id="2_lx8qb"]
+[ext_resource type="Script" path="res://quests/dialog_system/straight_dialog.gd" id="3_ni8pp"]
 
-[sub_resource type="Resource" id="Resource_xxslh"]
-script = ExtResource("2_fsmyv")
+[sub_resource type="Resource" id="Resource_t0n0f"]
+script = ExtResource("2_lx8qb")
 dialog_text = "Goodbye"
 
-[sub_resource type="Resource" id="Resource_4p8u3"]
-script = ExtResource("3_1t1ef")
-dialog_text = "Dolor Sit Amet"
-next_dialog = SubResource("Resource_xxslh")
-
-[sub_resource type="Resource" id="Resource_fcdkv"]
-script = ExtResource("3_1t1ef")
-dialog_text = "Hello World"
-next_dialog = SubResource("Resource_4p8u3")
+[sub_resource type="Resource" id="Resource_y18rj"]
+script = ExtResource("3_ni8pp")
+dialog_text = "\"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\""
+next_dialog = SubResource("Resource_t0n0f")
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -28,4 +23,4 @@ grow_vertical = 2
 
 [node name="DialogSystem" parent="." instance=ExtResource("1_fxd4t")]
 layout_mode = 1
-current_dialog = SubResource("Resource_fcdkv")
+start_dialog = SubResource("Resource_y18rj")
