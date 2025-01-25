@@ -35,6 +35,7 @@ window/stretch/aspect="expand"
 [gui]
 
 theme/custom="res://user_interface/base_theme.tres"
+theme/custom_font="res://assets/Fraunces/Fraunces.ttf"
 
 [input]
 
