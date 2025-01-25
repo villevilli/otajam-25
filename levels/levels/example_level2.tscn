@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=4 uid="uid://jk3jrtcwy10q"]
+[gd_scene load_steps=7 format=4 uid="uid://jk3jrtcwy10q"]
 
 [ext_resource type="Script" path="res://levels/level.gd" id="1_bpg7r"]
 [ext_resource type="TileSet" uid="uid://d3b4rsnwb4ahw" path="res://assets/levels/level_tiles.tres" id="2_kyx1u"]
 [ext_resource type="PackedScene" uid="uid://wxv3cetivhhg" path="res://characters/player/player.tscn" id="3_5egn8"]
 [ext_resource type="PackedScene" uid="uid://famg5e8r235r" path="res://levels/level_components/camera/camera.tscn" id="4_wl1xi"]
 [ext_resource type="PackedScene" uid="uid://b42c3rxpw863l" path="res://levels/level_components/level_connector/level_connector.tscn" id="5_blkve"]
+[ext_resource type="PackedScene" path="res://user_interface/EscapeMenu.tscn" id="6_2abeo"]
 
 [node name="ExampleLevel" type="Node2D"]
 script = ExtResource("1_bpg7r")
@@ -32,3 +33,7 @@ position = Vector2(2560, 1664)
 target_level_name = "example_level"
 spawn_pos_name = "entry1"
 metadata/target_entry = ""
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="EscapeMenu" parent="CanvasLayer" instance=ExtResource("6_2abeo")]

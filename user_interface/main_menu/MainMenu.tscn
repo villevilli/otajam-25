@@ -1,0 +1,55 @@
+[gd_scene load_steps=3 format=3 uid="uid://c12h6xh832aru"]
+
+[ext_resource type="Theme" uid="uid://brysrba6aklkb" path="res://user_interface/base_theme.tres" id="1_3msyt"]
+[ext_resource type="Script" path="res://user_interface/main_menu/main_menu.gd" id="2_wh45f"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_3msyt")
+script = ExtResource("2_wh45f")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -35.0
+offset_right = 96.0
+offset_bottom = 35.0
+grow_vertical = 2
+
+[node name="Buffer" type="Control" parent="Panel/HBoxContainer"]
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+
+[node name="MenuItems" type="VBoxContainer" parent="Panel/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="NewGame" type="Button" parent="Panel/HBoxContainer/MenuItems"]
+layout_mode = 2
+text = "New Game"
+
+[node name="LoadGame" type="Button" parent="Panel/HBoxContainer/MenuItems"]
+layout_mode = 2
+text = "Load Game"
+
+[node name="CloseGame" type="Button" parent="Panel/HBoxContainer/MenuItems"]
+layout_mode = 2
+text = "Load Game"
+
+[connection signal="pressed" from="Panel/HBoxContainer/MenuItems/NewGame" to="." method="_on_new_game_pressed"]
+[connection signal="button_down" from="Panel/HBoxContainer/MenuItems/CloseGame" to="." method="_on_close_game_button_down"]

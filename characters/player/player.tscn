@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://wxv3cetivhhg"]
+[gd_scene load_steps=8 format=3 uid="uid://wxv3cetivhhg"]
 
 [ext_resource type="Script" path="res://characters/player/player-movement.gd" id="2_2uicw"]
 [ext_resource type="Texture2D" uid="uid://dnvq3bpmka8jv" path="res://assets/Dargon/000.png" id="2_558qy"]
 [ext_resource type="Texture2D" uid="uid://btkiklc3whlo3" path="res://assets/Dargon/001.png" id="3_ncalx"]
 [ext_resource type="Texture2D" uid="uid://cl357tm28cvig" path="res://assets/Dargon/002.png" id="4_oytd3"]
+[ext_resource type="Texture2D" uid="uid://bf58at5npp6pe" path="res://assets/player_shadow.png" id="2_dm5ln"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5qm4w"]
 size = Vector2(511, 255)
@@ -33,6 +34,7 @@ collision_layer = 5
 collision_mask = 5
 motion_mode = 1
 script = ExtResource("2_2uicw")
+sprite = NodePath("Sprite")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_5qm4w")
@@ -42,3 +44,7 @@ scale = Vector2(0.3, 0.3)
 sprite_frames = SubResource("SpriteFrames_l6rav")
 animation = &"flight"
 frame_progress = 0.384003
+
+[node name="Shadow" type="Sprite2D" parent="."]
+position = Vector2(0, 72)
+texture = ExtResource("2_dm5ln")

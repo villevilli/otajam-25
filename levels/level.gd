@@ -6,3 +6,4 @@ func _ready() -> void:
 	var entrypoint: Node2D = find_child(LevelManager.entrypoint)
 	if entrypoint != null:
 		(get_node("Player") as Player).position=entrypoint.position
+		(get_node("Camera") as Camera2D).position=entrypoint.position

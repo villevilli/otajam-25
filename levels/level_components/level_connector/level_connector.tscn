@@ -7,8 +7,6 @@ size = Vector2(512, 512)
 
 [node name="LevelConnector" type="Node2D"]
 script = ExtResource("1_j7sqd")
-target_level_name = null
-spawn_pos_name = null
 
 [node name="InnerArea" type="Area2D" parent="."]
 collision_layer = 4

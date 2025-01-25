@@ -1,12 +1,13 @@
-[gd_scene load_steps=6 format=4 uid="uid://dv15lneo8iixf"]
+[gd_scene load_steps=7 format=4 uid="uid://dv15lneo8iixf"]
 
 [ext_resource type="TileSet" uid="uid://d3b4rsnwb4ahw" path="res://assets/levels/level_tiles.tres" id="1_hkvrh"]
 [ext_resource type="Script" path="res://levels/level.gd" id="1_smh30"]
+[ext_resource type="PackedScene" path="res://user_interface/EscapeMenu.tscn" id="2_jbtxj"]
 [ext_resource type="PackedScene" uid="uid://wxv3cetivhhg" path="res://characters/player/player.tscn" id="2_xfefd"]
 [ext_resource type="PackedScene" uid="uid://famg5e8r235r" path="res://levels/level_components/camera/camera.tscn" id="3_ywigi"]
 [ext_resource type="PackedScene" uid="uid://b42c3rxpw863l" path="res://levels/level_components/level_connector/level_connector.tscn" id="5_l2qnk"]
 
-[node name="ExampleLevel" type="Node2D"]
+[node name="ExampleLevel2" type="Node2D"]
 script = ExtResource("1_smh30")
 
 [node name="entry1" type="Node2D" parent="."]
@@ -32,3 +33,11 @@ position = Vector2(2560, -384)
 target_level_name = "example_level2"
 spawn_pos_name = "entry1"
 metadata/target_entry = ""
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="EscapeMenu" parent="CanvasLayer" instance=ExtResource("2_jbtxj")]
+visible = false
+
+[node name="default" type="Node2D" parent="."]
+position = Vector2(304, 960)
