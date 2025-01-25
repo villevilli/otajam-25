@@ -12,3 +12,4 @@ gravity = Vector3(0, 0, 0)
 scale_min = 0.6
 hue_variation_min = -0.05
 hue_variation_max = 0.05
+anim_offset_max = 1.0

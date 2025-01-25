@@ -3,6 +3,7 @@
 [ext_resource type="Script" path="res://levels/level_components/level_connector/connector.gd" id="1_j7sqd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gj7ux"]
+resource_local_to_scene = true
 size = Vector2(512, 512)
 
 [node name="LevelConnector" type="Node2D"]

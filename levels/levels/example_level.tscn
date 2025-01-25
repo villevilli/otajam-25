@@ -30,7 +30,7 @@ limit_right = 4352
 limit_bottom = 1280
 limit_smoothed = true
 
-[node name="LevelConnector" parent="." instance=ExtResource("5_l2qnk")]
+[node name="ConnectorE2" parent="." instance=ExtResource("5_l2qnk")]
 position = Vector2(2560, -384)
 target_level_name = "example_level2"
 spawn_pos_name = "entry1"
@@ -47,4 +47,8 @@ collider_size = Vector2(128, 512)
 [node name="EscapeMenu" parent="CanvasLayer" instance=ExtResource("8_83ttl")]
 visible = false
 
-[node name="lmao" type="Node2D" parent="."]
+[node name="ConnectorVillage" parent="." instance=ExtResource("5_l2qnk")]
+position = Vector2(4568, 688)
+target_level_name = "village"
+spawn_pos_name = "entry1"
+metadata/target_entry = ""
