@@ -1,28 +1,30 @@
-[gd_scene load_steps=8 format=3 uid="uid://wxv3cetivhhg"]
+[gd_scene load_steps=10 format=3 uid="uid://wxv3cetivhhg"]
 
 [ext_resource type="Script" path="res://characters/player/player-movement.gd" id="2_2uicw"]
 [ext_resource type="Texture2D" uid="uid://bf58at5npp6pe" path="res://assets/player_shadow.png" id="2_dm5ln"]
-[ext_resource type="Texture2D" uid="uid://bch6y4btcurbv" path="res://assets/Dargon_Fly/000.png" id="2_ukrif"]
-[ext_resource type="Texture2D" uid="uid://buh0yhgp8tco6" path="res://assets/Dargon_Fly/001.png" id="3_upt1f"]
-[ext_resource type="Texture2D" uid="uid://cmofpycj63m6q" path="res://assets/Dargon_Fly/002.png" id="4_k12up"]
+[ext_resource type="Texture2D" uid="uid://0uk83qkm0y4j" path="res://assets/Dargon_Fly_Headless/000.png" id="3_kfbvf"]
+[ext_resource type="Texture2D" uid="uid://dvpda31wc6mpj" path="res://assets/Dargon_Fly_Headless/001.png" id="4_pjh16"]
+[ext_resource type="Texture2D" uid="uid://dvy72ida66yf" path="res://assets/Dargon_Fly_Headless/002.png" id="5_2vm2q"]
+[ext_resource type="Texture2D" uid="uid://dlanf73fhnx0g" path="res://assets/Dargon_Head/dargon_attacc.png" id="6_hdywm"]
+[ext_resource type="Texture2D" uid="uid://d10lsidb3tpq0" path="res://assets/Dargon_Head/dargon_cute.png" id="7_4d0ek"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5qm4w"]
-size = Vector2(511, 255)
+size = Vector2(384, 255)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_l6rav"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_ukrif")
+"texture": ExtResource("3_kfbvf")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_upt1f")
+"texture": ExtResource("4_pjh16")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_k12up")
+"texture": ExtResource("5_2vm2q")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_upt1f")
+"texture": ExtResource("4_pjh16")
 }],
 "loop": true,
 "name": &"flight",
@@ -36,6 +38,7 @@ motion_mode = 1
 script = ExtResource("2_2uicw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 40)
 shape = SubResource("RectangleShape2D_5qm4w")
 
 [node name="Shadow" type="Sprite2D" parent="."]
@@ -44,7 +47,20 @@ texture = ExtResource("2_dm5ln")
 
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
 z_index = 5
+position = Vector2(-32, -128)
 scale = Vector2(0.3, 0.3)
 sprite_frames = SubResource("SpriteFrames_l6rav")
 animation = &"flight"
 frame_progress = 0.731592
+
+[node name="HeadAttack" type="Sprite2D" parent="."]
+z_index = 6
+position = Vector2(-32, -128)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("6_hdywm")
+
+[node name="HeadCute" type="Sprite2D" parent="."]
+z_index = 6
+position = Vector2(-32, -128)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("7_4d0ek")

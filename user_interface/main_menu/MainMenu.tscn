@@ -3,10 +3,10 @@
 [ext_resource type="Theme" uid="uid://brysrba6aklkb" path="res://user_interface/base_theme.tres" id="1_3msyt"]
 [ext_resource type="Script" path="res://user_interface/main_menu/main_menu.gd" id="2_wh45f"]
 [ext_resource type="Texture2D" uid="uid://3nlnophh2dl" path="res://assets/UI/background.png" id="3_wprvi"]
-[ext_resource type="Texture2D" uid="uid://cl357tm28cvig" path="res://assets/Dargon_Fly_Riderless/002.png" id="4_qbrlf"]
 [ext_resource type="Texture2D" uid="uid://blhsdwwj0a1yj" path="res://assets/UI/NewGame.png" id="4_vibdd"]
 [ext_resource type="Texture2D" uid="uid://i5npj2px0dyh" path="res://assets/UI/LoadGame.png" id="5_xovje"]
 [ext_resource type="Texture2D" uid="uid://blb2frrotgdge" path="res://assets/UI/quit_game.png" id="6_5mfoh"]
+[ext_resource type="Texture2D" uid="uid://dnvq3bpmka8jv" path="res://assets/Dargon_Fly_Riderless/000.png" id="7_h0e14"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -59,7 +59,7 @@ texture_normal = ExtResource("6_5mfoh")
 
 [node name="Dargon" type="Sprite2D" parent="."]
 position = Vector2(864, 552)
-texture = ExtResource("4_qbrlf")
+texture = ExtResource("7_h0e14")
 
 [connection signal="pressed" from="Panel/HBoxContainer/MenuItems/NewGame" to="." method="_on_new_game_pressed"]
 [connection signal="button_down" from="Panel/HBoxContainer/MenuItems/CloseGame" to="." method="_on_close_game_button_down"]

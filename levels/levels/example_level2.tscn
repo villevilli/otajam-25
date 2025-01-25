@@ -37,3 +37,4 @@ metadata/target_entry = ""
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="EscapeMenu" parent="CanvasLayer" instance=ExtResource("6_2abeo")]
+visible = false
