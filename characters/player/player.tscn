@@ -1,10 +1,33 @@
-[gd_scene load_steps=4 format=3 uid="uid://wxv3cetivhhg"]
+[gd_scene load_steps=8 format=3 uid="uid://wxv3cetivhhg"]
 
 [ext_resource type="Texture2D" uid="uid://buiygwmyao2n2" path="res://assets/player.png" id="1_1ijao"]
 [ext_resource type="Script" path="res://characters/player/player-movement.gd" id="2_2uicw"]
+[ext_resource type="Texture2D" uid="uid://dnvq3bpmka8jv" path="res://assets/Dargon/000.png" id="2_558qy"]
+[ext_resource type="Texture2D" uid="uid://btkiklc3whlo3" path="res://assets/Dargon/001.png" id="3_ncalx"]
+[ext_resource type="Texture2D" uid="uid://cl357tm28cvig" path="res://assets/Dargon/002.png" id="4_oytd3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5qm4w"]
 size = Vector2(511, 255)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_l6rav"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_558qy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ncalx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_oytd3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ncalx")
+}],
+"loop": true,
+"name": &"flight",
+"speed": 5.0
+}]
 
 [node name="CharacterBody2D" type="CharacterBody2D" node_paths=PackedStringArray("sprite")]
 collision_layer = 5
@@ -16,5 +39,12 @@ sprite = NodePath("Sprite2D")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_5qm4w")
 
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.3, 0.3)
+sprite_frames = SubResource("SpriteFrames_l6rav")
+animation = &"flight"
+frame_progress = 0.503742
+
 [node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
 texture = ExtResource("1_1ijao")
