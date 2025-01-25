@@ -19,8 +19,8 @@ signal quest_finished(quest: Quest)
 
 func serialize() -> Dictionary:
 	var dict: Dictionary = {
-		"active_quests": Array[Quest],
-		"completed_quests": Array[Quest]
+		"active_quests": [],
+		"completed_quests": []
 	}
 
 	for quest in active_quests:
