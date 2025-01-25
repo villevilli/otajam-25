@@ -67,6 +67,11 @@ open_menu={
 ]
 }
 
+[layer_names]
+
+2d_physics/layer_1="El General Collisons"
+2d_physics/layer_3="PlayerTriggerLayer"
+
 [rendering]
 
 renderer/rendering_method="gl_compatibility"
