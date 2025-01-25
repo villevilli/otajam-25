@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://c12h6xh832aru"]
+[gd_scene load_steps=4 format=3 uid="uid://c12h6xh832aru"]
 
 [ext_resource type="Theme" uid="uid://brysrba6aklkb" path="res://user_interface/base_theme.tres" id="1_3msyt"]
 [ext_resource type="Script" path="res://user_interface/main_menu/main_menu.gd" id="2_wh45f"]
+[ext_resource type="Texture2D" uid="uid://cl357tm28cvig" path="res://assets/Dargon/002.png" id="3_o6ult"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -50,6 +51,10 @@ text = "Load Game"
 [node name="CloseGame" type="Button" parent="Panel/HBoxContainer/MenuItems"]
 layout_mode = 2
 text = "Load Game"
+
+[node name="002" type="Sprite2D" parent="."]
+position = Vector2(864, 552)
+texture = ExtResource("3_o6ult")
 
 [connection signal="pressed" from="Panel/HBoxContainer/MenuItems/NewGame" to="." method="_on_new_game_pressed"]
 [connection signal="button_down" from="Panel/HBoxContainer/MenuItems/CloseGame" to="." method="_on_close_game_button_down"]

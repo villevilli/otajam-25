@@ -39,6 +39,7 @@ script = ExtResource("2_2uicw")
 shape = SubResource("RectangleShape2D_5qm4w")
 
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
+z_index = 5
 scale = Vector2(0.3, 0.3)
 sprite_frames = SubResource("SpriteFrames_l6rav")
 animation = &"flight"
