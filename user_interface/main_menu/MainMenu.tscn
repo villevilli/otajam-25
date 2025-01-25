@@ -62,4 +62,5 @@ position = Vector2(864, 552)
 texture = ExtResource("7_h0e14")
 
 [connection signal="pressed" from="Panel/HBoxContainer/MenuItems/NewGame" to="." method="_on_new_game_pressed"]
+[connection signal="pressed" from="Panel/HBoxContainer/MenuItems/LoadGame" to="." method="_on_load_game_pressed"]
 [connection signal="button_down" from="Panel/HBoxContainer/MenuItems/CloseGame" to="." method="_on_close_game_button_down"]

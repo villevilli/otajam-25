@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://dlanf73fhnx0g" path="res://assets/Dargon_Head/dargon_attacc.png" id="6_hdywm"]
 [ext_resource type="Texture2D" uid="uid://d10lsidb3tpq0" path="res://assets/Dargon_Head/dargon_cute.png" id="7_4d0ek"]
 [ext_resource type="Texture2D" uid="uid://dave5sdrjq6ed" path="res://assets/placeholder_bubble.png" id="8_5lhi6"]
-[ext_resource type="Material" uid="uid://cfnqsghopi066" path="res://assets/atk_bubbles.tres" id="8_ee3j2"]
+[ext_resource type="Material" path="res://assets/atk_bubbles.tres" id="8_ee3j2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5qm4w"]
 size = Vector2(384, 255)
