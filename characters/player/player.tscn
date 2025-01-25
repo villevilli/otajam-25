@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://wxv3cetivhhg"]
+[gd_scene load_steps=14 format=3 uid="uid://wxv3cetivhhg"]
 
 [ext_resource type="Script" path="res://characters/player/player-movement.gd" id="2_2uicw"]
 [ext_resource type="Texture2D" uid="uid://bf58at5npp6pe" path="res://assets/player_shadow.png" id="2_dm5ln"]
@@ -7,8 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://dvy72ida66yf" path="res://assets/Dargon_Fly_Headless/002.png" id="5_2vm2q"]
 [ext_resource type="Texture2D" uid="uid://dlanf73fhnx0g" path="res://assets/Dargon_Head/dargon_attacc.png" id="6_hdywm"]
 [ext_resource type="Texture2D" uid="uid://d10lsidb3tpq0" path="res://assets/Dargon_Head/dargon_cute.png" id="7_4d0ek"]
-[ext_resource type="Texture2D" uid="uid://dave5sdrjq6ed" path="res://assets/placeholder_bubble.png" id="8_5lhi6"]
-[ext_resource type="Material" uid="uid://cfnqsghopi066" path="res://assets/atk_bubbles.tres" id="8_ee3j2"]
+[ext_resource type="Material" uid="uid://cfnqsghopi066" path="res://assets/combat/atk_bubbles.tres" id="8_ee3j2"]
+[ext_resource type="Texture2D" uid="uid://cqho86jxe2wor" path="res://assets/combat/bblset.png" id="9_qtwiq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5qm4w"]
 size = Vector2(384, 255)
@@ -32,6 +32,18 @@ animations = [{
 "name": &"flight",
 "speed": 5.0
 }]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_dwkq1"]
+particles_animation = true
+particles_anim_h_frames = 3
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_72506"]
+particles_animation = true
+particles_anim_h_frames = 3
+particles_anim_v_frames = 1
+particles_anim_loop = false
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
 collision_layer = 5
@@ -73,19 +85,21 @@ texture = ExtResource("7_4d0ek")
 flip_h = true
 
 [node name="AttackParticlesRight" type="GPUParticles2D" parent="."]
+z_index = 4
+material = SubResource("CanvasItemMaterial_dwkq1")
 position = Vector2(120, -200)
 rotation = 0.261799
 amount = 30
 process_material = ExtResource("8_ee3j2")
-texture = ExtResource("8_5lhi6")
+texture = ExtResource("9_qtwiq")
 local_coords = true
 
 [node name="AttackParticlesLeft" type="GPUParticles2D" parent="."]
-z_index = 7
+z_index = 4
+material = SubResource("CanvasItemMaterial_72506")
 position = Vector2(-184, -200)
 rotation = 2.87979
-emitting = false
 amount = 30
 process_material = ExtResource("8_ee3j2")
-texture = ExtResource("8_5lhi6")
+texture = ExtResource("9_qtwiq")
 local_coords = true
