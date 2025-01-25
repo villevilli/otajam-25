@@ -14,5 +14,5 @@ extends Node2D
 
 func _on_inner_area_body_entered(_body: Node2D) -> void:
 	#TODO Check if is player, tho shouldn't matter since on own layer.
-	var world: LevelManager = get_parent().get_parent()
-	world.switch_level(target_level_name, spawn_pos_name)
+	LevelManager.levelchange.emit(target_level_name, spawn_pos_name)
+	#LevelManager.switch_level(target_level_name, spawn_pos_name)

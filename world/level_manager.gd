@@ -1,11 +1,12 @@
-extends Node2D
-class_name LevelManager
+extends Node
 
 var entrypoint: String= ""
 
-func switch_level(level: String, spawn_pos: String) -> void:
+signal levelchange(level: Level,spawn_pos: String)
+func _ready() -> void:
+	levelchange.connect(_switch_level,CONNECT_DEFERRED)
+
+func _switch_level(level: String, spawn_pos: String) -> void:
+	var new_scene: String = "res://levels/levels/"+level+".tscn"
 	entrypoint=spawn_pos
-	var levels: Array[Node] = find_children("","Level")
-	add_child((load("res://levels/levels/"+level+".tscn") as PackedScene).instantiate())
-	for lvl in levels:
-		lvl.queue_free()
+	get_tree().change_scene_to_file(new_scene)

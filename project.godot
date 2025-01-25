@@ -17,6 +17,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 QuestManager="*res://quests/quest_manager.gd"
+LevelManager="*res://world/level_manager.gd"
 
 [debug]
 
