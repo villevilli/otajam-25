@@ -17,6 +17,9 @@ signal quest_started(quest: Quest)
 ## Emitted for quests being finished
 signal quest_finished(quest: Quest)
 
+## Emitted when quest lists should be reloaded
+signal quests_changed
+
 func serialize() -> Dictionary:
 	var dict: Dictionary = {
 		"active_quests": [],
@@ -32,6 +35,7 @@ func serialize() -> Dictionary:
 func deserialize(dict: Dictionary) -> void:
 	active_quests = (dict["active_quests"] as Array[Dictionary]).map(Quest.from_serialized)
 	completed_quests = (dict["completed_quests"] as Array[Dictionary]).map(Quest.from_serialized)
+	quests_changed.emit()
 
 	
 func get_quest_by_name(quest_name: StringName) -> Quest:

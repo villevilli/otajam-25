@@ -1,6 +1,8 @@
 extends Resource
 class_name DialogNode
 
+@export var portrait: Texture2D
+
 var _dialog_system: DialogSystem
 
 func goto_dialog(dialog: DialogNode) -> void:

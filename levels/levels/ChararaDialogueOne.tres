@@ -1,0 +1,48 @@
+[gd_resource type="Resource" script_class="StraightDialog" load_steps=11 format=3 uid="uid://c7tyh4qlc2vmm"]
+
+[ext_resource type="Texture2D" uid="uid://dd6jndub4sjbm" path="res://assets/Portraits/chrara.png" id="1_rxf6r"]
+[ext_resource type="Script" path="res://quests/dialog_system/dialog_nodes/end_dialog.gd" id="2_b2rdv"]
+[ext_resource type="Script" path="res://quests/quest.gd" id="3_102m5"]
+[ext_resource type="Texture2D" uid="uid://0uxsh371dexr" path="res://assets/Portraits/player_portrait.png" id="4_c7gdm"]
+[ext_resource type="Script" path="res://quests/dialog_system/dialog_nodes/straight_dialog.gd" id="5_8u7sa"]
+
+[sub_resource type="Resource" id="Resource_j0xu5"]
+script = ExtResource("3_102m5")
+quest_name = &"GetChararasColoursBack"
+quest_description = "You must find and liberate the colors stolen from charara"
+
+[sub_resource type="Resource" id="Resource_rutmo"]
+script = ExtResource("2_b2rdv")
+dialog_text = "Charara:
+Sorry, newermind... But thanks and I hope you get back with all your colour and creativity in tack!  (-:"
+start_quest = SubResource("Resource_j0xu5")
+finish_quest_name = &""
+portrait = ExtResource("1_rxf6r")
+
+[sub_resource type="Resource" id="Resource_2d5i0"]
+script = ExtResource("5_8u7sa")
+dialog_text = "You:
+Huh? sure, I'll get you your colours back from the evil who stole them."
+next_dialog = SubResource("Resource_rutmo")
+portrait = ExtResource("4_c7gdm")
+
+[sub_resource type="Resource" id="Resource_5n0uj"]
+script = ExtResource("5_8u7sa")
+dialog_text = "Charara:
+If you can help, id be extra happy (;"
+next_dialog = SubResource("Resource_2d5i0")
+portrait = ExtResource("1_rxf6r")
+
+[sub_resource type="Resource" id="Resource_afobu"]
+script = ExtResource("5_8u7sa")
+dialog_text = "Charara:
+My pretty and colourful happy colors have been stolen ):"
+next_dialog = SubResource("Resource_5n0uj")
+portrait = ExtResource("1_rxf6r")
+
+[resource]
+script = ExtResource("5_8u7sa")
+dialog_text = "Charara:
+Please help me ):"
+next_dialog = SubResource("Resource_afobu")
+portrait = ExtResource("1_rxf6r")

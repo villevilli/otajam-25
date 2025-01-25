@@ -6,26 +6,20 @@
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_aswlb"]
 size = Vector2(128, 128)
 
-[node name="DialogSystem" type="Control"]
-layout_mode = 3
-anchor_top = 0.632716
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
+[node name="DialogSystem" type="CanvasLayer"]
 script = ExtResource("1_s8x7s")
 metadata/_edit_use_anchors_ = true
 
 [node name="DialogPanel" type="Panel" parent="."]
 unique_name_in_owner = true
-layout_mode = 1
-anchors_preset = 15
+anchors_preset = -1
+anchor_top = 0.621914
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = 3.05176e-05
 grow_horizontal = 2
 grow_vertical = 2
+metadata/_edit_use_anchors_ = true
 
 [node name="SimpleDialog" type="MarginContainer" parent="DialogPanel"]
 layout_mode = 1
@@ -40,6 +34,7 @@ theme = ExtResource("2_udq3e")
 layout_mode = 2
 
 [node name="CharacterPortrait" type="TextureRect" parent="DialogPanel/SimpleDialog/HBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 texture = SubResource("PlaceholderTexture2D_aswlb")
 expand_mode = 2

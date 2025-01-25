@@ -7,5 +7,5 @@ class_name QuestItem
 @onready var quest_description_label: Label = $"%QuestDescription"
 
 func _ready() -> void:
-	quest_name_label.text = quest.quest_name
+	quest_name_label.text = quest.quest_name.capitalize()
 	quest_description_label.text = quest.quest_description
