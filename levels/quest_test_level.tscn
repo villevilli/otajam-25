@@ -1,0 +1,16 @@
+[gd_scene load_steps=5 format=3 uid="uid://dpd3qwky8873q"]
+
+[ext_resource type="Script" path="res://levels/quest_test_level.gd" id="1_aeg7h"]
+[ext_resource type="PackedScene" uid="uid://b4xv0neyy1tdi" path="res://user_interface/EscapeMenu.tscn" id="1_x6b0u"]
+[ext_resource type="Script" path="res://quests/quest.gd" id="2_j5p2o"]
+
+[sub_resource type="Resource" id="Resource_gdnow"]
+script = ExtResource("2_j5p2o")
+quest_name = "Hello Quest"
+quest_description = "This is a test quest lolxd you like it dont you"
+
+[node name="QuestTestLevel" type="Node"]
+script = ExtResource("1_aeg7h")
+beautiful_quest = SubResource("Resource_gdnow")
+
+[node name="EscapeMenu" parent="." instance=ExtResource("1_x6b0u")]

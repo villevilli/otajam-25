@@ -10,10 +10,23 @@ var active_quests: Array[Quest]
 var completed_quests: Array[Quest]
 
 ## Emitted for quests starting
-signal quest_started(completed_quest: Quest)
+signal quest_started(quest: Quest)
 
 ## Emitted for quests being finished
-signal quest_finished(started_quest: Quest)
+signal quest_finished(quest: Quest)
+
+
+func get_quest_by_name(quest_name: StringName) -> Quest:
+	for quest in active_quests:
+		if quest.quest_name == quest_name:
+			return quest
+
+	for quest in completed_quests:
+		if quest.quest_name == quest_name:
+			return quest
+	
+	return null
+
 
 func _ready() -> void:
 	quest_finished.connect(_quest_finished)

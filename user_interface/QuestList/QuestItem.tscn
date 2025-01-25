@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://ch7mpj27c7irs"]
+
+[ext_resource type="Script" path="res://user_interface/QuestList/quest_item.gd" id="1_uhrl5"]
+[ext_resource type="Theme" uid="uid://brysrba6aklkb" path="res://user_interface/base_theme.tres" id="2_r8f1y"]
+
+[node name="QuestItem" type="PanelContainer"]
+offset_right = 1152.0
+offset_bottom = 54.0
+size_flags_horizontal = 3
+size_flags_vertical = 2
+theme = ExtResource("2_r8f1y")
+theme_type_variation = &"SubPanel"
+script = ExtResource("1_uhrl5")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="QuestName" type="Label" parent="VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 0
+text = "TEst"
+
+[node name="QuestDescription" type="Label" parent="VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 0
+text = "LOL"

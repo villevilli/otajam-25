@@ -1,15 +1,10 @@
-extends Node
+extends Resource
 class_name Quest
 
-@export var quest_name: String
-@export var quest_description: String
+@export var quest_name: StringName
+@export_multiline var quest_description: String
 
 var is_active: bool = false
-
-func _ready() -> void:
-	QuestManager.connect("quest_started", _quest_started)
-	QuestManager.connect("quest_finished", _quest_finished)
-	pass
 
 ## Quest_started signal listener
 func _quest_started(started_quest: Quest) -> void:
@@ -37,4 +32,7 @@ func complete() -> void:
 
 ## Function to start this quest
 func start() -> void:
+	QuestManager.connect("quest_started", _quest_started)
+	QuestManager.connect("quest_finished", _quest_finished)
+
 	QuestManager.emit_signal("quest_started", self)

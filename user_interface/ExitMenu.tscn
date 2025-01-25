@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://c48d8tb5e50x6"]
+
+[ext_resource type="Script" path="res://user_interface/exit_menu.gd" id="1_ct8je"]
+
+[node name="ExitMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_ct8je")
+metadata/_tab_index = 1
+
+[node name="ExitButton" type="Button" parent="."]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+text = "Close Game"

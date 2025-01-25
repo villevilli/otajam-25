@@ -5,6 +5,7 @@ class_name DialogSystem
 
 var current_dialog: DialogNode:
 	set(dialog_node):
+		current_dialog.dialog_finished()
 		current_dialog = dialog_node
 		_reset_simple_text()
 

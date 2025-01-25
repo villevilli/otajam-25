@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=9 format=4 uid="uid://brysrba6aklkb"]
+[gd_resource type="Theme" load_steps=10 format=4 uid="uid://brysrba6aklkb"]
 
 [sub_resource type="Image" id="Image_ar521"]
 data = {
@@ -1133,6 +1133,12 @@ content_margin_top = 0.0
 content_margin_right = 0.0
 content_margin_bottom = 0.0
 
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_on5lb"]
+content_margin_left = 10.0
+color = Color(1, 1, 1, 1)
+thickness = 5
+vertical = true
+
 [resource]
 MarginContainer/constants/margin_bottom = 16
 MarginContainer/constants/margin_left = 16
@@ -1167,3 +1173,5 @@ RichTextLabel/fonts/mono_font = SubResource("FontFile_qignn")
 RichTextLabel/fonts/normal_font = SubResource("FontFile_qignn")
 RichTextLabel/styles/focus = SubResource("StyleBoxFlat_xkp6f")
 RichTextLabel/styles/normal = SubResource("StyleBoxEmpty_ijul1")
+SubPanel/base_type = &"PanelContainer"
+SubPanel/styles/panel = SubResource("StyleBoxLine_on5lb")

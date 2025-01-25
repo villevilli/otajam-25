@@ -1,0 +1,40 @@
+[gd_scene load_steps=4 format=3 uid="uid://b4xv0neyy1tdi"]
+
+[ext_resource type="Script" path="res://user_interface/escape_menu.gd" id="1_2m8kd"]
+[ext_resource type="PackedScene" uid="uid://61a2nwetbqyf" path="res://user_interface/QuestList/QuestList.tscn" id="1_drder"]
+[ext_resource type="PackedScene" uid="uid://c48d8tb5e50x6" path="res://user_interface/ExitMenu.tscn" id="2_t5jkl"]
+
+[node name="EscapeMenu" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_2m8kd")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 32
+
+[node name="TabContainer" type="TabContainer" parent="MarginContainer"]
+layout_mode = 2
+current_tab = 0
+
+[node name="QuestList" parent="MarginContainer/TabContainer" instance=ExtResource("1_drder")]
+layout_mode = 2
+
+[node name="ExitMenu" parent="MarginContainer/TabContainer" instance=ExtResource("2_t5jkl")]
+visible = false
+layout_mode = 2
