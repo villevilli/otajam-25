@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://c8spimt34t3fs"]
 
 [ext_resource type="PackedScene" uid="uid://bnch2ki81nahy" path="res://quests/dialog_system/dialog_system.tscn" id="1_fxd4t"]
-[ext_resource type="Script" path="res://quests/dialog_system/end_dialog.gd" id="2_lx8qb"]
-[ext_resource type="Script" path="res://quests/dialog_system/straight_dialog.gd" id="3_ni8pp"]
+[ext_resource type="Script" path="res://quests/dialog_system/dialog_nodes/end_dialog.gd" id="2_lx8qb"]
+[ext_resource type="Script" path="res://quests/dialog_system/dialog_nodes/straight_dialog.gd" id="3_ni8pp"]
 
 [sub_resource type="Resource" id="Resource_t0n0f"]
 script = ExtResource("2_lx8qb")
