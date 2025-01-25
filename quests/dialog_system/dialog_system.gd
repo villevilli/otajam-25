@@ -5,7 +5,8 @@ class_name DialogSystem
 
 var current_dialog: DialogNode:
 	set(dialog_node):
-		current_dialog.dialog_finished()
+		if current_dialog != null:
+			current_dialog.dialog_finished()
 		current_dialog = dialog_node
 		_reset_simple_text()
 
@@ -26,7 +27,7 @@ func _process(_delta: float) -> void:
 	 
 	ms_elapsed += int(_delta * 1000)
 
-	if ms_elapsed >= dialog_letter_delay_ms:
+	if ms_elapsed >= dialog_letter_delay_ms && simple_dialog_text.visible_ratio <= 1:
 		_reveal_new_letter()
 
 	if current_dialog is StraightDialog:
@@ -54,6 +55,10 @@ func _reveal_new_letter() -> void:
 	simple_dialog_text.visible_characters += 1
 
 func dialog_clicked() -> void:
+	if simple_dialog_text.visible_ratio < 1:
+		simple_dialog_text.visible_ratio = 1
+		return
+
 	if current_dialog is StraightDialog:
 		current_dialog = (current_dialog as StraightDialog).next_dialog
 	elif current_dialog is EndDialog:

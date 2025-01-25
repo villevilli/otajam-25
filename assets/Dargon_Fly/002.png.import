@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://btkiklc3whlo3"
-path="res://.godot/imported/001.png-0ae6194ccbe1421a9df980340b64f36f.ctex"
+uid="uid://cmofpycj63m6q"
+path="res://.godot/imported/002.png-611e65fc540f1bf13381474d96f50823.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Dargon/001.png"
-dest_files=["res://.godot/imported/001.png-0ae6194ccbe1421a9df980340b64f36f.ctex"]
+source_file="res://assets/Dargon_Fly/002.png"
+dest_files=["res://.godot/imported/002.png-611e65fc540f1bf13381474d96f50823.ctex"]
 
 [params]
 
