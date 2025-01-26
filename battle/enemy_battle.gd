@@ -7,6 +7,7 @@ class_name BattleEnemy
 # Animations
 @onready var particles: GPUParticles2D = $"AttackParticles"
 @onready var sprite: AnimatedSprite2D = $"AiEnemy"
+@onready var turn_ind: AnimatedSprite2D = $"TurnInd"
 
 var random: RandomNumberGenerator = RandomNumberGenerator.new()
 
@@ -16,6 +17,7 @@ var health: int = max_health
 func _ready() -> void:
 	battle_manager.DamageEnemy.connect(_take_damage)
 	battle_manager.EnemyTurn.connect(_enemy_turn)
+	turn_ind.play("default")
 	_update_health()
 # Called when the node enters the scene tree for the first time.
 
@@ -24,11 +26,13 @@ func _take_damage(amount: int) -> void:
 	_update_health()
 
 func _enemy_turn() -> void:
+	turn_ind.show()
 	print("Enemy Playing Turn")
-	get_tree().create_timer(3.5).timeout.connect(_base_attack)
-	get_tree().create_timer(7).timeout.connect(_yield_turn)
+	get_tree().create_timer(3).timeout.connect(_base_attack)
+	get_tree().create_timer(4.3).timeout.connect(_yield_turn)
 	
 func _yield_turn()->void:
+	turn_ind.hide()
 	battle_manager.PlayerTurn.emit()
 	
 func _update_health() -> void:

@@ -17,6 +17,7 @@ var random: RandomNumberGenerator = RandomNumberGenerator.new()
 # UI Display
 @onready var player_healthbar: TextureProgressBar = $"PlayerHealth/TextureProgressBar"
 @onready var player_anim: PlayerAnim = $"PlayerAnim"
+@onready var turn_ind: AnimatedSprite2D = $"TurnInd"
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -26,6 +27,7 @@ func _ready() -> void:
 	attack_breath_button.pressed.connect(_breath_attack)
 	attack_spit_button.pressed.connect(_spit_attack)
 	#Setup
+	turn_ind.play("default")
 	_setup_spit_attack()
 	_update_health()
 	
@@ -64,6 +66,7 @@ func _update_health() -> void:
 func lock_abilities() -> void:
 	attack_breath_button.disabled=true
 	attack_spit_button.disabled=true
+	turn_ind.hide()
 	
 
 func unlock_abilities() -> void:
@@ -71,6 +74,7 @@ func unlock_abilities() -> void:
 	spit_cooldown-=1
 	if spit_cooldown<1:
 		attack_spit_button.disabled=false
+	turn_ind.show()
 
 func _setup_spit_attack() -> void:
 	attack_spit_button.hide()

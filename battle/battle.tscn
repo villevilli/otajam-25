@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://bqhoq24op6iby"]
+[gd_scene load_steps=27 format=3 uid="uid://bqhoq24op6iby"]
 
 [ext_resource type="Script" path="res://battle/battle.gd" id="1_fh6x6"]
 [ext_resource type="Texture2D" uid="uid://bdex36ii237w3" path="res://assets/combat/backgroundBattle.png" id="2_7050j"]
@@ -16,6 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://cqho86jxe2wor" path="res://assets/combat/bblset.png" id="14_rwpw4"]
 [ext_resource type="Material" uid="uid://ct6dpbw4x5akk" path="res://assets/combat/battle_mode/atk_spit.tres" id="15_fj3d1"]
 [ext_resource type="Script" path="res://battle/enemy_battle.gd" id="15_tjhde"]
+[ext_resource type="SpriteFrames" uid="uid://b88u61lvxtfyy" path="res://assets/combat/markers/Turn_ind.tres" id="16_cawce"]
 [ext_resource type="Texture2D" uid="uid://g5puv06thtba" path="res://assets/combat/battle_mode/HealthBarEnemy.png" id="16_iemn4"]
 [ext_resource type="Texture2D" uid="uid://bmr4vo51yhufq" path="res://assets/combat/battle_mode/HealthBarEnemyProgress.png" id="17_pdoc0"]
 [ext_resource type="Texture2D" uid="uid://qfll73t8j4uu" path="res://assets/Ai/ai.png" id="18_umxbr"]
@@ -52,7 +53,7 @@ particles_anim_loop = false
 [sub_resource type="SpriteFrames" id="SpriteFrames_kduej"]
 animations = [{
 "frames": [{
-"duration": 1.0,
+"duration": 2.0,
 "texture": ExtResource("19_qa2vw")
 }, {
 "duration": 1.0,
@@ -205,6 +206,12 @@ one_shot = true
 explosiveness = 1.0
 local_coords = true
 
+[node name="TurnInd" type="AnimatedSprite2D" parent="Player"]
+position = Vector2(328, 112)
+scale = Vector2(1.5, 1.5)
+sprite_frames = ExtResource("16_cawce")
+frame_progress = 0.939401
+
 [node name="Enemy" type="Control" parent="."]
 anchors_preset = 0
 offset_right = 40.0
@@ -253,8 +260,6 @@ texture = ExtResource("6_mpkcb")
 position = Vector2(968, 464)
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_kduej")
-animation = &"attack"
-frame = 1
 
 [node name="AttackParticles" type="GPUParticles2D" parent="Enemy"]
 z_index = 4
@@ -270,6 +275,13 @@ lifetime = 1.6
 one_shot = true
 explosiveness = 1.0
 local_coords = true
+
+[node name="TurnInd" type="AnimatedSprite2D" parent="Enemy"]
+visible = false
+position = Vector2(912, 224)
+scale = Vector2(1.5, 1.5)
+sprite_frames = ExtResource("16_cawce")
+frame_progress = 0.972988
 
 [node name="Announcer" type="Control" parent="."]
 anchors_preset = 0
