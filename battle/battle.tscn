@@ -210,7 +210,7 @@ local_coords = true
 position = Vector2(328, 112)
 scale = Vector2(1.5, 1.5)
 sprite_frames = ExtResource("16_cawce")
-frame_progress = 0.939401
+frame_progress = 0.634165
 
 [node name="Enemy" type="Control" parent="."]
 anchors_preset = 0
