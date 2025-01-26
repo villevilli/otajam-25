@@ -28,7 +28,7 @@ func _on_inner_area_body_entered(_body: Node2D) -> void:
 	if excluded_by_quest && QuestManager.get_quest_by_name(excluded_by_quest) != null:
 		return
 	print("entered combat zone")
-	area.monitoring = false
+	area.set_deferred("monitoring", false)
 
 	var quest := QuestManager.get_quest_by_name(combat_quest_track)
 
