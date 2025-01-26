@@ -1,7 +1,7 @@
 extends Control
 class_name BattlePlayer
 
-@export var spit_unlock_quest: StringName = ""
+var spit_unlock_quest: StringName = "ReturnToChararas"
 
 var max_health: int = 25
 var health: int = max_health
@@ -70,11 +70,13 @@ func unlock_abilities() -> void:
 	spit_cooldown-=1
 	if spit_cooldown<1:
 		attack_spit_button.disabled=false
+
 func _setup_spit_attack() -> void:
 	attack_spit_button.hide()
 	if spit_unlock_quest=="":
 		attack_spit_button.show()
 	var spit_quest: Quest = QuestManager.get_quest_by_name(spit_unlock_quest)
+	print(spit_quest)
 	if spit_quest!=null:
 		if spit_quest.is_finished:
 			attack_spit_button.show()

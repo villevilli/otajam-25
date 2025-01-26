@@ -1,11 +1,12 @@
-[gd_scene load_steps=7 format=4 uid="uid://crt4orq4xp0qq"]
+[gd_scene load_steps=8 format=4 uid="uid://bhh5yoobbh1jc"]
 
 [ext_resource type="Script" path="res://levels/level.gd" id="1_jfkds"]
 [ext_resource type="TileSet" uid="uid://d3b4rsnwb4ahw" path="res://assets/levels/level_tiles.tres" id="2_ac6ih"]
 [ext_resource type="PackedScene" uid="uid://wxv3cetivhhg" path="res://characters/player/player.tscn" id="6_wvwjh"]
 [ext_resource type="PackedScene" uid="uid://famg5e8r235r" path="res://levels/level_components/camera/camera.tscn" id="7_ssno7"]
+[ext_resource type="PackedScene" uid="uid://dkjp13lmjuwef" path="res://levels/level_components/combat_zone/combatZone.tscn" id="7_x72d2"]
 [ext_resource type="PackedScene" uid="uid://b42c3rxpw863l" path="res://levels/level_components/level_connector/level_connector.tscn" id="8_j05em"]
-[ext_resource type="PackedScene" uid="uid://b4xv0neyy1tdi" path="res://user_interface/EscapeMenu.tscn" id="9_7bah7"]
+[ext_resource type="PackedScene" path="res://user_interface/EscapeMenu.tscn" id="9_7bah7"]
 
 [node name="ExampleLevel" type="Node2D"]
 script = ExtResource("1_jfkds")
@@ -46,3 +47,7 @@ metadata/target_entry = ""
 
 [node name="EscapeMenu" parent="CanvasLayer" instance=ExtResource("9_7bah7")]
 visible = false
+
+[node name="CombatZone" parent="." instance=ExtResource("7_x72d2")]
+position = Vector2(1470, 510)
+collider_size = Vector2(16, 16)
