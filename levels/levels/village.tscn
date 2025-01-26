@@ -15,7 +15,7 @@
 [node name="ExampleLevel2" type="Node2D"]
 script = ExtResource("1_1ajge")
 
-[node name="entry1" type="Node2D" parent="."]
+[node name="entry_top" type="Node2D" parent="."]
 position = Vector2(2560, 127)
 
 [node name="entry2" type="Node2D" parent="."]
@@ -68,9 +68,9 @@ limit_bottom = 1280
 limit_smoothed = true
 
 [node name="LevelConnector" parent="." instance=ExtResource("5_t35fr")]
-position = Vector2(2560, -384)
-target_level_name = "example_level2"
-spawn_pos_name = "entry1"
+position = Vector2(2557, -384)
+target_level_name = "lake"
+spawn_pos_name = "entry_bottom"
 metadata/target_entry = ""
 
 [node name="LevelConnector2" parent="." instance=ExtResource("5_t35fr")]

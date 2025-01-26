@@ -3,7 +3,7 @@ extends Control
 var file_dialog: FileDialog
 
 func _on_new_game_pressed() -> void:
-	LevelManager.levelchange.emit("village", "default")
+	LevelManager.levelchange.emit("tutorial", "default")
 
 func _on_close_game_button_down() -> void:
 	get_tree().quit()

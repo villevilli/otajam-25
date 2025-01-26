@@ -3,6 +3,8 @@
 /android/
 /export/
 
+# Dont commit zipped things
+export.zip
 
 #vscode
 .vscode/**/*
