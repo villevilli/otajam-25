@@ -11,6 +11,9 @@ extends Node2D
 
 func _ready() -> void:
 	area.body_entered.connect(_on_inner_area_body_entered)
+	if required_quest == "ReturnToChararas":
+		return
+	
 	if required_quest && QuestManager.get_quest_by_name(required_quest) == null:
 		visible = false
 		return
@@ -37,6 +40,7 @@ func _on_inner_area_body_entered(_body: Node2D) -> void:
 		return
 	print("entered combat zone")
 	area.set_deferred("monitoring", false)
+	#hide()
 
 	var quest := QuestManager.get_quest_by_name(combat_quest_track)
 

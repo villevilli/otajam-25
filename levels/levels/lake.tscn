@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dkjp13lmjuwef" path="res://levels/level_components/combat_zone/combatZone.tscn" id="7_x72d2"]
 [ext_resource type="Texture2D" uid="uid://qfll73t8j4uu" path="res://assets/Ai/ai.png" id="8_c3s0n"]
 [ext_resource type="PackedScene" uid="uid://b42c3rxpw863l" path="res://levels/level_components/level_connector/level_connector.tscn" id="8_j05em"]
-[ext_resource type="PackedScene" uid="uid://b4xv0neyy1tdi" path="res://user_interface/EscapeMenu.tscn" id="9_7bah7"]
+[ext_resource type="PackedScene" path="res://user_interface/EscapeMenu.tscn" id="9_7bah7"]
 [ext_resource type="PackedScene" uid="uid://dm8an5cotosta" path="res://levels/level_components/enter_dialog_area/dialog_area.tscn" id="9_218hy"]
 [ext_resource type="Script" path="res://quests/dialog_system/dialog_nodes/end_dialog.gd" id="10_df55r"]
 [ext_resource type="Script" path="res://quests/quest.gd" id="11_1jixk"]

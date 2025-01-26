@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="EndDialog" load_steps=5 format=3 uid="uid://bhy3dxoidgf4e"]
+[gd_resource type="Resource" script_class="EndDialog" load_steps=5 format=3 uid="uid://3sj850e7rqwr"]
 
 [ext_resource type="Texture2D" uid="uid://bbs6gi3a4vwht" path="res://assets/Portraits/ai_portrait.png" id="1_lbvip"]
 [ext_resource type="Script" path="res://quests/dialog_system/dialog_nodes/end_dialog.gd" id="2_b4rta"]
