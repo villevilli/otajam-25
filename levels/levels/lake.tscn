@@ -51,10 +51,11 @@ visible = false
 
 [node name="CombatZone" parent="." instance=ExtResource("7_x72d2")]
 position = Vector2(1470, 510)
+combat_quest_track = &"KillAi"
 collider_size = Vector2(16, 16)
 
-[node name="Ai" type="Sprite2D" parent="."]
-position = Vector2(1481, 549)
+[node name="Ai" type="Sprite2D" parent="CombatZone"]
+position = Vector2(11, 39)
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("8_c3s0n")
 flip_h = true

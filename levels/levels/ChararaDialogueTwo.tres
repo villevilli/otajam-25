@@ -10,8 +10,8 @@
 [sub_resource type="Resource" id="Resource_u7dwe"]
 script = ExtResource("3_kj127")
 kill_count_requirement = 3
-quest_name = &"KillAiAbove"
-quest_description = "Go and kill some ai bitches! (like charara requested)"
+quest_name = &"KillAi"
+quest_description = "Go and kill some ai bitches! (like charara requested) Can be found in the lake above"
 
 [sub_resource type="Resource" id="Resource_u3qru"]
 script = ExtResource("1_ogmx1")
