@@ -5,6 +5,7 @@ var dialog_system := preload("res://quests/dialog_system/dialog_system.tscn")
 @export var dialog: DialogNode
 
 @export_category("Entry Requirements")
+@export var required_quest_must_be_complete: bool = false
 @export var required_quest: StringName = ""
 @export var excluded_by_quest: StringName = ""
 
@@ -25,12 +26,14 @@ func body_entered(_body: Node2D) -> void:
 	if Engine.is_editor_hint():
 		return
 	
-	print("body_entered")
+	var required_quest_quest := QuestManager.get_quest_by_name(required_quest)
 
-
-	if required_quest && QuestManager.get_quest_by_name(required_quest) == null:
-		print("required_quest null")
-		return
+	if required_quest_must_be_complete && required_quest_quest != null:
+		if !required_quest_quest.is_finished:
+			return
+	else:
+		if required_quest && QuestManager.get_quest_by_name(required_quest) == null:
+			return
 
 	if excluded_by_quest && QuestManager.get_quest_by_name(excluded_by_quest) != null:
 		return

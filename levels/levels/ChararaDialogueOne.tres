@@ -29,14 +29,14 @@ portrait = ExtResource("1_rxf6r")
 [sub_resource type="Resource" id="Resource_5n0uj"]
 script = ExtResource("5_8u7sa")
 dialog_text = "You:
-Sure, how can I find the paint?"
+Sure, how can I find the paint can?"
 next_dialog = SubResource("Resource_lfr6w")
 portrait = ExtResource("4_c7gdm")
 
 [sub_resource type="Resource" id="Resource_afobu"]
 script = ExtResource("5_8u7sa")
 dialog_text = "Charara:
-Can you help me? All my colourful paint is gone! I can't draw the pretty and colourful person I just met. )-:"
+Can you help me? All my colourful paint can is gone! I can't draw the pretty and colourful person I just met. )-:"
 next_dialog = SubResource("Resource_5n0uj")
 portrait = ExtResource("1_rxf6r")
 

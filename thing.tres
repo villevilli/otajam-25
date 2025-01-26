@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="EndDialog" load_steps=5 format=3 uid="uid://bhy3dxoidgf4e"]
+
+[ext_resource type="Texture2D" uid="uid://bbs6gi3a4vwht" path="res://assets/Portraits/ai_portrait.png" id="1_lbvip"]
+[ext_resource type="Script" path="res://quests/dialog_system/dialog_nodes/end_dialog.gd" id="2_b4rta"]
+[ext_resource type="Script" path="res://quests/quest.gd" id="3_d14mu"]
+
+[sub_resource type="Resource" id="Resource_3cnah"]
+script = ExtResource("3_d14mu")
+quest_name = &"ReturnToChararas"
+quest_description = "Return chararas paint back to her, and inform her of who stole her stuff."
+
+[resource]
+script = ExtResource("2_b4rta")
+dialog_text = "AI:
+Not on my watch!"
+start_quest = SubResource("Resource_3cnah")
+finish_quest_name = &"FindChararasPaint"
+portrait = ExtResource("1_lbvip")

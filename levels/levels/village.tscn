@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=4 uid="uid://bhdg4k234kbld"]
+[gd_scene load_steps=20 format=4 uid="uid://bhdg4k234kbld"]
 
 [ext_resource type="Script" path="res://levels/level.gd" id="1_1ajge"]
 [ext_resource type="TileSet" uid="uid://d3b4rsnwb4ahw" path="res://assets/levels/level_tiles.tres" id="2_0e641"]
@@ -6,12 +6,43 @@
 [ext_resource type="PackedScene" uid="uid://famg5e8r235r" path="res://levels/level_components/camera/camera.tscn" id="4_gmcjv"]
 [ext_resource type="PackedScene" uid="uid://b42c3rxpw863l" path="res://levels/level_components/level_connector/level_connector.tscn" id="5_t35fr"]
 [ext_resource type="PackedScene" uid="uid://dm8an5cotosta" path="res://levels/level_components/enter_dialog_area/dialog_area.tscn" id="6_p1fnk"]
-[ext_resource type="Resource" uid="uid://bjqxluuoedt75" path="res://levels/levels/ChararaDialogueOne.tres" id="7_n2d47"]
-[ext_resource type="PackedScene" path="res://user_interface/EscapeMenu.tscn" id="8_682ln"]
+[ext_resource type="Resource" uid="uid://c7tyh4qlc2vmm" path="res://levels/levels/ChararaDialogueOne.tres" id="7_n2d47"]
+[ext_resource type="PackedScene" uid="uid://b4xv0neyy1tdi" path="res://user_interface/EscapeMenu.tscn" id="8_682ln"]
 [ext_resource type="Texture2D" uid="uid://b4psibxr2p5ij" path="res://assets/paint_stains/paint_stains_2.png" id="9_qn0dg"]
 [ext_resource type="Texture2D" uid="uid://b6tjijodcjf5o" path="res://assets/paint_stains/paint_stains_3.png" id="10_257p3"]
 [ext_resource type="Resource" uid="uid://bd3kpcm84m2c7" path="res://levels/levels/ChararaDialogueTwo.tres" id="11_airte"]
 [ext_resource type="Texture2D" uid="uid://dvpfnt62nh50p" path="res://assets/charara.png" id="12_l48rk"]
+[ext_resource type="Texture2D" uid="uid://0uxsh371dexr" path="res://assets/Portraits/player_portrait.png" id="13_78ojv"]
+[ext_resource type="Script" path="res://quests/dialog_system/dialog_nodes/end_dialog.gd" id="14_2ce7y"]
+[ext_resource type="Script" path="res://quests/dialog_system/dialog_nodes/straight_dialog.gd" id="15_um1i8"]
+
+[sub_resource type="Resource" id="Resource_8xubh"]
+script = ExtResource("14_2ce7y")
+dialog_text = "Thanks For Playing!
+(there is no more content)"
+finish_quest_name = &""
+portrait = ExtResource("12_l48rk")
+
+[sub_resource type="Resource" id="Resource_sne5l"]
+script = ExtResource("15_um1i8")
+dialog_text = "Player:
+Yep now the threat is no more and everything is done"
+next_dialog = SubResource("Resource_8xubh")
+portrait = ExtResource("13_78ojv")
+
+[sub_resource type="Resource" id="Resource_mha0c"]
+script = ExtResource("15_um1i8")
+dialog_text = "Charara:
+Welp, good riddance I'd say"
+next_dialog = SubResource("Resource_sne5l")
+portrait = ExtResource("12_l48rk")
+
+[sub_resource type="Resource" id="Resource_vmeks"]
+script = ExtResource("14_2ce7y")
+dialog_text = "You:
+I really dont think the paint leads this way"
+finish_quest_name = &""
+portrait = ExtResource("13_78ojv")
 
 [node name="ExampleLevel2" type="Node2D"]
 script = ExtResource("1_1ajge")
@@ -83,6 +114,7 @@ metadata/target_entry = ""
 [node name="ChararaDialogueOneArea" parent="." instance=ExtResource("6_p1fnk")]
 position = Vector2(838, 638)
 dialog = ExtResource("7_n2d47")
+required_quest_must_be_complete = null
 excluded_by_quest = &"FindChararasPaint"
 collider_size = Vector2(400, 1600)
 
@@ -94,10 +126,23 @@ visible = false
 [node name="DialogArea" parent="." instance=ExtResource("6_p1fnk")]
 position = Vector2(845, 617)
 dialog = ExtResource("11_airte")
+required_quest_must_be_complete = null
 required_quest = &"ReturnToChararas"
 excluded_by_quest = &"KillAi"
+
+[node name="GameCompleteDialog" parent="." instance=ExtResource("6_p1fnk")]
+position = Vector2(845, 617)
+dialog = SubResource("Resource_mha0c")
+required_quest = &"TellChararaThatAiIsKilled"
 
 [node name="Charara" type="Sprite2D" parent="."]
 position = Vector2(947, 515)
 scale = Vector2(0.34625, 0.34625)
 texture = ExtResource("12_l48rk")
+
+[node name="DialogArea2" parent="." instance=ExtResource("6_p1fnk")]
+position = Vector2(2559, 109)
+dialog = SubResource("Resource_vmeks")
+required_quest_must_be_complete = null
+excluded_by_quest = &"KillAi"
+collider_size = Vector2(512, 200)

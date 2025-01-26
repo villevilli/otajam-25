@@ -1,22 +1,15 @@
-[gd_resource type="Resource" script_class="StraightDialog" load_steps=13 format=3 uid="uid://c3mw0gihjemux"]
+[gd_resource type="Resource" script_class="StraightDialog" load_steps=11 format=3 uid="uid://c3mw0gihjemux"]
 
+[ext_resource type="Resource" uid="uid://bhy3dxoidgf4e" path="res://thing.tres" id="1_jb0u6"]
 [ext_resource type="Texture2D" uid="uid://0uxsh371dexr" path="res://assets/Portraits/player_portrait.png" id="1_v1xte"]
-[ext_resource type="Script" path="res://quests/dialog_system/dialog_nodes/end_dialog.gd" id="2_bv36s"]
 [ext_resource type="Script" path="res://quests/dialog_system/dialog_nodes/straight_dialog.gd" id="2_gs11w"]
-[ext_resource type="Script" path="res://quests/quest.gd" id="3_ysrt2"]
 [ext_resource type="Texture2D" uid="uid://bbs6gi3a4vwht" path="res://assets/Portraits/ai_portrait.png" id="5_he8a5"]
 
-[sub_resource type="Resource" id="Resource_3cnah"]
-script = ExtResource("3_ysrt2")
-quest_name = &"ReturnToChararas"
-quest_description = "Return chararas paint back to her, and inform her of who stole her stuff."
-
-[sub_resource type="Resource" id="Resource_w46bg"]
-script = ExtResource("2_bv36s")
+[sub_resource type="Resource" id="Resource_nxqjn"]
+script = ExtResource("2_gs11w")
 dialog_text = "Player:
-I'm taking chararas paint, and bringing it back this moment!"
-start_quest = SubResource("Resource_3cnah")
-finish_quest_name = &"FindChararasPaint"
+I'm taking chararas paint can, and bringing it back to her!"
+next_dialog = ExtResource("1_jb0u6")
 portrait = ExtResource("1_v1xte")
 
 [sub_resource type="Resource" id="Resource_idgnr"]
@@ -24,7 +17,7 @@ script = ExtResource("2_gs11w")
 dialog_text = "Player:
 Thats not nice!
 You shouldn't just go and steal everyones property and use it all without permission, even if its laying in their yards."
-next_dialog = SubResource("Resource_w46bg")
+next_dialog = SubResource("Resource_nxqjn")
 portrait = ExtResource("1_v1xte")
 
 [sub_resource type="Resource" id="Resource_i4m8e"]

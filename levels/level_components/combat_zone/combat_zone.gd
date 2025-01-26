@@ -11,6 +11,14 @@ extends Node2D
 
 func _ready() -> void:
 	area.body_entered.connect(_on_inner_area_body_entered)
+	if required_quest && QuestManager.get_quest_by_name(required_quest) == null:
+		visible = false
+		return
+
+	if excluded_by_quest && QuestManager.get_quest_by_name(excluded_by_quest) != null:
+		visible = false
+		return
+
 
 @export var collider_size: Vector2 = Vector2(512, 512):
 	# Update speed and reset the rotation.
