@@ -71,7 +71,6 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("3_sd13r")
-spit_unlock_quest = &"GetChararasColours"
 
 [node name="PlayerHealth" type="Control" parent="Player"]
 process_mode = 3
@@ -123,7 +122,6 @@ layout_mode = 2
 text = "Breath Attack"
 
 [node name="SpitAttack" type="Button" parent="Player/PlayerActions"]
-visible = false
 layout_mode = 2
 text = "Projectile"
 
