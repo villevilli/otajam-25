@@ -26,7 +26,12 @@ func _ready() -> void:
 
 	current_dialog = start_dialog
 	dialog_panel.connect("gui_input", _dialog_input)
+	simple_dialog_text.connect("gui_input",_dialog_input)
 	get_tree().paused = true
+	
+func _input(event: InputEvent)->void:
+	if event.is_action_pressed("dialogue_advance"):
+		dialog_clicked()
 
 func _process(_delta: float) -> void:
 	 
