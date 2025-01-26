@@ -63,11 +63,16 @@ metadata/target_entry = ""
 [node name="EscapeMenu" parent="CanvasLayer" instance=ExtResource("9_7bah7")]
 visible = false
 
+[node name="Label" type="Label" parent="CanvasLayer"]
+offset_right = 40.0
+offset_bottom = 21.0
+text = "Press M to open menu"
+
 [node name="CombatZone" parent="." instance=ExtResource("7_x72d2")]
 position = Vector2(1470, 510)
 required_quest = &"KillAi"
 combat_quest_track = &"KillAi"
-collider_size = Vector2(16, 16)
+collider_size = Vector2(256, 256)
 
 [node name="Ai" type="Sprite2D" parent="CombatZone"]
 position = Vector2(11, 39)
@@ -79,7 +84,7 @@ flip_h = true
 position = Vector2(680, 636)
 required_quest = &"KillAi"
 combat_quest_track = &"KillAi"
-collider_size = Vector2(16, 16)
+collider_size = Vector2(256, 256)
 
 [node name="Ai" type="Sprite2D" parent="CombatZone2"]
 position = Vector2(11, 39)
@@ -91,7 +96,7 @@ flip_h = true
 position = Vector2(2625, 752)
 required_quest = &"KillAi"
 combat_quest_track = &"KillAi"
-collider_size = Vector2(16, 16)
+collider_size = Vector2(256, 256)
 
 [node name="Ai" type="Sprite2D" parent="CombatZone3"]
 position = Vector2(11, 39)

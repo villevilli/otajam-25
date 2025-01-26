@@ -8,7 +8,7 @@ var current_kill_count := 0:
         if value >= kill_count_requirement: complete()
 
 func get_description() -> String:
-    return (quest_description + "\n Kills left: " + str(current_kill_count) + " / " + str(kill_count_requirement))
+    return (quest_description + "\n Ai Killed: " + str(current_kill_count) + " / " + str(kill_count_requirement))
 
 func serialize() -> Dictionary:
     var dict := super()

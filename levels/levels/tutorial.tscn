@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://b42c3rxpw863l" path="res://levels/level_components/level_connector/level_connector.tscn" id="5_tdany"]
 [ext_resource type="PackedScene" uid="uid://b4xv0neyy1tdi" path="res://user_interface/EscapeMenu.tscn" id="8_vlf1n"]
 
-[node name="ExampleLevel" type="Node2D"]
+[node name="ExampleLevel2" type="Node2D"]
 script = ExtResource("1_1j5mu")
 
 [node name="default" type="Node2D" parent="."]
@@ -32,6 +32,11 @@ limit_smoothed = true
 
 [node name="EscapeMenu" parent="CanvasLayer" instance=ExtResource("8_vlf1n")]
 visible = false
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+offset_right = 40.0
+offset_bottom = 21.0
+text = "Press M to open menu"
 
 [node name="ConnectorVillage" parent="." instance=ExtResource("5_tdany")]
 position = Vector2(2619, 633)

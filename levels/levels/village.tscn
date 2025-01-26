@@ -114,7 +114,7 @@ metadata/target_entry = ""
 [node name="ChararaDialogueOneArea" parent="." instance=ExtResource("6_p1fnk")]
 position = Vector2(838, 638)
 dialog = ExtResource("7_n2d47")
-required_quest_must_be_complete = null
+required_quest_must_be_complete = false
 excluded_by_quest = &"FindChararasPaint"
 collider_size = Vector2(400, 1600)
 
@@ -123,26 +123,32 @@ collider_size = Vector2(400, 1600)
 [node name="EscapeMenu" parent="CanvasLayer" instance=ExtResource("8_682ln")]
 visible = false
 
+[node name="Label" type="Label" parent="CanvasLayer"]
+offset_right = 40.0
+offset_bottom = 21.0
+text = "Press M to open menu"
+
 [node name="DialogArea" parent="." instance=ExtResource("6_p1fnk")]
 position = Vector2(845, 617)
 dialog = ExtResource("11_airte")
-required_quest_must_be_complete = null
+required_quest_must_be_complete = false
 required_quest = &"ReturnToChararas"
 excluded_by_quest = &"KillAi"
 
 [node name="GameCompleteDialog" parent="." instance=ExtResource("6_p1fnk")]
 position = Vector2(845, 617)
 dialog = SubResource("Resource_mha0c")
+required_quest_must_be_complete = false
 required_quest = &"TellChararaThatAiIsKilled"
 
 [node name="Charara" type="Sprite2D" parent="."]
-position = Vector2(947, 515)
+position = Vector2(947, 517)
 scale = Vector2(0.34625, 0.34625)
 texture = ExtResource("12_l48rk")
 
 [node name="DialogArea2" parent="." instance=ExtResource("6_p1fnk")]
 position = Vector2(2559, 109)
 dialog = SubResource("Resource_vmeks")
-required_quest_must_be_complete = null
+required_quest_must_be_complete = false
 excluded_by_quest = &"KillAi"
 collider_size = Vector2(512, 200)

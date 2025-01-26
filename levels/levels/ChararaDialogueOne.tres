@@ -42,7 +42,8 @@ portrait = ExtResource("1_rxf6r")
 
 [resource]
 script = ExtResource("5_8u7sa")
-dialog_text = "Charara:
+dialog_text = "(press space or click to advance dialogue)
+Charara:
 Hi! Who is this pretty person standing in front of me?"
 next_dialog = SubResource("Resource_afobu")
 portrait = ExtResource("1_rxf6r")
