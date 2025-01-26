@@ -1,0 +1,218 @@
+[gd_scene load_steps=22 format=3 uid="uid://bqhoq24op6iby"]
+
+[ext_resource type="Script" path="res://battle/battle.gd" id="1_fh6x6"]
+[ext_resource type="Texture2D" uid="uid://bdex36ii237w3" path="res://assets/combat/backgroundBattle.png" id="2_7050j"]
+[ext_resource type="Script" path="res://battle/player_combat.gd" id="3_sd13r"]
+[ext_resource type="Texture2D" uid="uid://b5i2l6db1rlc4" path="res://assets/combat/battle_mode/HealthBarBG.png" id="4_emmwx"]
+[ext_resource type="Texture2D" uid="uid://bapm07wlbf2dx" path="res://assets/combat/battle_mode/HealthBarProgress.png" id="5_osipn"]
+[ext_resource type="Texture2D" uid="uid://ode8oqahhc8n" path="res://assets/combat/battle_mode/HealthIcon.png" id="6_mpkcb"]
+[ext_resource type="Script" path="res://battle/battle_player_anim.gd" id="7_xtvvb"]
+[ext_resource type="Texture2D" uid="uid://0uk83qkm0y4j" path="res://assets/Dargon_Fly_Headless/000.png" id="8_qikd4"]
+[ext_resource type="Texture2D" uid="uid://dvpda31wc6mpj" path="res://assets/Dargon_Fly_Headless/001.png" id="9_q1pw1"]
+[ext_resource type="Texture2D" uid="uid://dvy72ida66yf" path="res://assets/Dargon_Fly_Headless/002.png" id="10_d8yud"]
+[ext_resource type="Texture2D" uid="uid://dlanf73fhnx0g" path="res://assets/Dargon_Head/dargon_attacc.png" id="11_wvy8d"]
+[ext_resource type="Texture2D" uid="uid://d10lsidb3tpq0" path="res://assets/Dargon_Head/dargon_cute.png" id="12_wqbva"]
+[ext_resource type="Material" uid="uid://bkkkh2phkmi6n" path="res://assets/combat/battle_mode/atk_bubbles_battle.tres" id="13_84u33"]
+[ext_resource type="Texture2D" uid="uid://cqho86jxe2wor" path="res://assets/combat/bblset.png" id="14_rwpw4"]
+[ext_resource type="Script" path="res://battle/enemy_battle.gd" id="15_tjhde"]
+[ext_resource type="Texture2D" uid="uid://g5puv06thtba" path="res://assets/combat/battle_mode/HealthBarEnemy.png" id="16_iemn4"]
+[ext_resource type="Texture2D" uid="uid://bmr4vo51yhufq" path="res://assets/combat/battle_mode/HealthBarEnemyProgress.png" id="17_pdoc0"]
+[ext_resource type="Texture2D" uid="uid://c6uexvgqnv32j" path="res://assets/combat/AIEnemy.png" id="18_vhsc4"]
+[ext_resource type="Script" path="res://battle/announcer.gd" id="19_pgkto"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cty4h"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_qikd4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_q1pw1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_d8yud")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_q1pw1")
+}],
+"loop": true,
+"name": &"flight",
+"speed": 5.0
+}]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_nhe18"]
+particles_animation = true
+particles_anim_h_frames = 3
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[node name="Battle" type="Panel"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_fh6x6")
+
+[node name="BG" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_7050j")
+expand_mode = 1
+
+[node name="Player" type="Control" parent="."]
+z_index = 1
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("3_sd13r")
+
+[node name="PlayerHealth" type="Control" parent="Player"]
+process_mode = 3
+anchors_preset = 0
+offset_left = 144.0
+offset_top = 40.0
+offset_right = 184.0
+offset_bottom = 80.0
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="Player/PlayerHealth"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -35.0
+offset_right = 100.0
+offset_bottom = -10.0
+grow_vertical = 2
+scale = Vector2(1.5, 1.5)
+value = 50.0
+texture_under = ExtResource("4_emmwx")
+texture_progress = ExtResource("5_osipn")
+
+[node name="TextureRect" type="TextureRect" parent="Player/PlayerHealth"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -45.0
+offset_top = -45.0
+offset_right = 55.0
+offset_bottom = 55.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_mpkcb")
+
+[node name="PlayerActions" type="VBoxContainer" parent="Player"]
+layout_mode = 0
+offset_left = 120.0
+offset_top = 384.0
+offset_right = 235.0
+offset_bottom = 424.0
+
+[node name="BreathAttack" type="Button" parent="Player/PlayerActions"]
+layout_mode = 2
+text = "Breath Attack"
+
+[node name="PlayerAnim" type="Control" parent="Player"]
+anchors_preset = 0
+offset_left = 250.0
+offset_top = 250.0
+offset_right = 250.0
+offset_bottom = 250.0
+script = ExtResource("7_xtvvb")
+
+[node name="Sprite" type="AnimatedSprite2D" parent="Player/PlayerAnim"]
+z_index = 5
+scale = Vector2(0.2, 0.2)
+sprite_frames = SubResource("SpriteFrames_cty4h")
+animation = &"flight"
+flip_h = true
+
+[node name="HeadAttack" type="Sprite2D" parent="Player/PlayerAnim"]
+visible = false
+z_index = 6
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("11_wvy8d")
+flip_h = true
+
+[node name="HeadCute" type="Sprite2D" parent="Player/PlayerAnim"]
+z_index = 6
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("12_wqbva")
+flip_h = true
+
+[node name="AttackParticlesRight" type="GPUParticles2D" parent="Player/PlayerAnim"]
+z_index = 4
+material = SubResource("CanvasItemMaterial_nhe18")
+position = Vector2(104, -42)
+rotation = 0.389208
+scale = Vector2(0.4, 0.4)
+emitting = false
+amount = 30
+process_material = ExtResource("13_84u33")
+texture = ExtResource("14_rwpw4")
+lifetime = 1.6
+local_coords = true
+
+[node name="Enemy" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("15_tjhde")
+
+[node name="EnemyHealth" type="Control" parent="Enemy"]
+layout_mode = 2
+anchors_preset = 0
+offset_left = 696.0
+offset_top = 576.0
+offset_right = 811.0
+offset_bottom = 576.0
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="Enemy/EnemyHealth"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -15.0
+offset_right = 100.0
+offset_bottom = 10.0
+grow_vertical = 2
+scale = Vector2(1.5, 1.5)
+value = 50.0
+texture_under = ExtResource("16_iemn4")
+texture_progress = ExtResource("17_pdoc0")
+
+[node name="TextureRect" type="TextureRect" parent="Enemy/EnemyHealth"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -82.5
+offset_top = -25.0
+offset_right = 17.5
+offset_bottom = 75.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_mpkcb")
+
+[node name="AiEnemy" type="Sprite2D" parent="Enemy"]
+position = Vector2(952, 440)
+texture = ExtResource("18_vhsc4")
+
+[node name="Announcer" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 392.0
+offset_top = 376.0
+offset_right = 792.0
+offset_bottom = 676.0
+script = ExtResource("19_pgkto")
