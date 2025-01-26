@@ -1,34 +1,35 @@
 extends Panel
+class_name BattleManager
 
-var player_max_health: int = 50
-var player_health: int = 50
-var enemy_max_health: int = 50
-var enemy_health: int = 50
-
-
-#Player Actions
-
-
-
-# UI Display
-@onready var player_healthbar: TextureProgressBar = $"PlayerHealth/TextureProgressBar"
-@onready var enemy_healthbar: TextureProgressBar = $"EnemyHealth/TextureProgressBar" 
+signal DamageEnemy(amount: int)
+signal DamagePlayer(amount: int)
+signal EnemyTurn
+signal PlayerTurn
+signal EnemyDefeated
+signal PlayerDefeated
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-
+	print("Battle Ready")
+	print(get_node("Player").get_children())
+	EnemyTurn.connect(_enemy_turn)
+	PlayerTurn.connect(_player_turn)
 	
-	enemy_healthbar.max_value=enemy_max_health
-	player_healthbar.max_value=player_max_health
-	enemy_healthbar.value=enemy_health
-	player_healthbar.value=player_health
-
-
-func _player_breath_attack()->void:
-		player_anim.breath_attack()
-		_damage_enemy(5)
+	EnemyDefeated.connect(_win)
+	PlayerDefeated.connect(_lose)
 	
-func _damage_enemy(amount: int)->void:
-	enemy_health-=amount
-	enemy_healthbar.value=enemy_health
+func _enemy_turn()->void:
+	print("Enemy Turn")
+
+func _player_turn()->void:
+	print("Player Turn")
 	
+func _win()->void:
+	get_tree().create_timer(2).timeout.connect(_exit_battle)
+
+func _lose()->void:
+	print("loser lmao")
+	get_tree().quit()
+	
+func _exit_battle()-> void:
+	(get_parent().get_parent() as Level).resume_game()

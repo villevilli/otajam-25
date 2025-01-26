@@ -1,6 +1,7 @@
 extends CharacterBody2D
 class_name Player
 
+var capturing_input: bool = true
 @export var speed: float = 500
 @onready var sprite: AnimatedSprite2D = $"Sprite"
 @onready var head_atck: Sprite2D = $"HeadAttack"
@@ -12,6 +13,8 @@ func _ready() -> void:
 	sprite.play()
 	
 func _process(_delta: float) -> void:
+	if !capturing_input:
+		pass
 	var attacking: bool = Input.is_action_pressed("attack")
 	if attacking:
 		head_atck.show()
@@ -27,6 +30,8 @@ func _process(_delta: float) -> void:
 		atk_particles_right.emitting=false
 
 func _physics_process(_delta: float) -> void:
+	if !capturing_input:
+		pass
 	#var input_direction:Vector2 = Input.get_vector("left", "right", "up", "down")
 	var input_x: float = Input.get_axis("left", "right")
 	var input_y: float = Input.get_axis("up", "down")

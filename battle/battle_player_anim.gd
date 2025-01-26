@@ -1,4 +1,4 @@
-extends CanvasLayer
+extends Control
 class_name PlayerAnim
 
 @onready var sprite: AnimatedSprite2D = $"Sprite"
@@ -14,6 +14,7 @@ func breath_attack()->void:
 	head_cute.hide()
 	head_atck.show()
 	atk_particles_right.emitting=true
+	get_tree()
 	get_tree().create_timer(2).timeout.connect(_stop_breath)
 	
 func _stop_breath()->void:

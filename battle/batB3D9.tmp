@@ -1,39 +1,38 @@
-[gd_scene load_steps=22 format=3 uid="uid://bqhoq24op6iby"]
+[gd_scene load_steps=21 format=3 uid="uid://bqhoq24op6iby"]
 
-[ext_resource type="Script" path="res://battle/battle.gd" id="1_fh6x6"]
-[ext_resource type="Texture2D" uid="uid://bdex36ii237w3" path="res://assets/combat/backgroundBattle.png" id="2_7050j"]
-[ext_resource type="Script" path="res://battle/player_combat.gd" id="3_sd13r"]
-[ext_resource type="Texture2D" uid="uid://b5i2l6db1rlc4" path="res://assets/combat/battle_mode/HealthBarBG.png" id="4_emmwx"]
-[ext_resource type="Texture2D" uid="uid://bapm07wlbf2dx" path="res://assets/combat/battle_mode/HealthBarProgress.png" id="5_osipn"]
-[ext_resource type="Texture2D" uid="uid://ode8oqahhc8n" path="res://assets/combat/battle_mode/HealthIcon.png" id="6_mpkcb"]
-[ext_resource type="Script" path="res://battle/battle_player_anim.gd" id="7_xtvvb"]
-[ext_resource type="Texture2D" uid="uid://0uk83qkm0y4j" path="res://assets/Dargon_Fly_Headless/000.png" id="8_qikd4"]
-[ext_resource type="Texture2D" uid="uid://dvpda31wc6mpj" path="res://assets/Dargon_Fly_Headless/001.png" id="9_q1pw1"]
-[ext_resource type="Texture2D" uid="uid://dvy72ida66yf" path="res://assets/Dargon_Fly_Headless/002.png" id="10_d8yud"]
-[ext_resource type="Texture2D" uid="uid://dlanf73fhnx0g" path="res://assets/Dargon_Head/dargon_attacc.png" id="11_wvy8d"]
-[ext_resource type="Texture2D" uid="uid://d10lsidb3tpq0" path="res://assets/Dargon_Head/dargon_cute.png" id="12_wqbva"]
-[ext_resource type="Material" uid="uid://bkkkh2phkmi6n" path="res://assets/combat/battle_mode/atk_bubbles_battle.tres" id="13_84u33"]
-[ext_resource type="Texture2D" uid="uid://cqho86jxe2wor" path="res://assets/combat/bblset.png" id="14_rwpw4"]
-[ext_resource type="Script" path="res://battle/enemy_battle.gd" id="15_tjhde"]
-[ext_resource type="Texture2D" uid="uid://g5puv06thtba" path="res://assets/combat/battle_mode/HealthBarEnemy.png" id="16_iemn4"]
-[ext_resource type="Texture2D" uid="uid://bmr4vo51yhufq" path="res://assets/combat/battle_mode/HealthBarEnemyProgress.png" id="17_pdoc0"]
-[ext_resource type="Texture2D" uid="uid://c6uexvgqnv32j" path="res://assets/combat/AIEnemy.png" id="18_vhsc4"]
-[ext_resource type="Script" path="res://battle/announcer.gd" id="19_pgkto"]
+[ext_resource type="Texture2D" uid="uid://0uk83qkm0y4j" path="res://assets/Dargon_Fly_Headless/000.png" id="1_f5q4a"]
+[ext_resource type="Script" path="res://battle/battle.gd" id="1_psvrb"]
+[ext_resource type="Script" path="res://battle/battle_player_anim.gd" id="1_sna7r"]
+[ext_resource type="Texture2D" uid="uid://dvpda31wc6mpj" path="res://assets/Dargon_Fly_Headless/001.png" id="2_egp5y"]
+[ext_resource type="Script" path="res://battle/player_combat.gd" id="3_0vkb8"]
+[ext_resource type="Texture2D" uid="uid://dvy72ida66yf" path="res://assets/Dargon_Fly_Headless/002.png" id="3_ycq26"]
+[ext_resource type="Texture2D" uid="uid://dlanf73fhnx0g" path="res://assets/Dargon_Head/dargon_attacc.png" id="4_v8ixh"]
+[ext_resource type="Texture2D" uid="uid://d10lsidb3tpq0" path="res://assets/Dargon_Head/dargon_cute.png" id="5_jmt54"]
+[ext_resource type="Texture2D" uid="uid://cqho86jxe2wor" path="res://assets/combat/bblset.png" id="7_2mf4q"]
+[ext_resource type="Material" uid="uid://bkkkh2phkmi6n" path="res://assets/combat/battle_mode/atk_bubbles_battle.tres" id="9_num5g"]
+[ext_resource type="Texture2D" uid="uid://bdex36ii237w3" path="res://assets/combat/backgroundBattle.png" id="10_2nuxe"]
+[ext_resource type="Texture2D" uid="uid://b5i2l6db1rlc4" path="res://assets/combat/battle_mode/HealthBarBG.png" id="11_3msy0"]
+[ext_resource type="Texture2D" uid="uid://ode8oqahhc8n" path="res://assets/combat/battle_mode/HealthIcon.png" id="11_u3b4j"]
+[ext_resource type="Texture2D" uid="uid://bapm07wlbf2dx" path="res://assets/combat/battle_mode/HealthBarProgress.png" id="12_sqhfj"]
+[ext_resource type="Texture2D" uid="uid://c6uexvgqnv32j" path="res://assets/combat/AIEnemy.png" id="14_aolb5"]
+[ext_resource type="Texture2D" uid="uid://g5puv06thtba" path="res://assets/combat/battle_mode/HealthBarEnemy.png" id="15_dtpqw"]
+[ext_resource type="Script" path="res://battle/enemy_battle.gd" id="15_so3pr"]
+[ext_resource type="Texture2D" uid="uid://bmr4vo51yhufq" path="res://assets/combat/battle_mode/HealthBarEnemyProgress.png" id="16_e1fsv"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_cty4h"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("8_qikd4")
+"texture": ExtResource("1_f5q4a")
 }, {
 "duration": 1.0,
-"texture": ExtResource("9_q1pw1")
+"texture": ExtResource("2_egp5y")
 }, {
 "duration": 1.0,
-"texture": ExtResource("10_d8yud")
+"texture": ExtResource("3_ycq26")
 }, {
 "duration": 1.0,
-"texture": ExtResource("9_q1pw1")
+"texture": ExtResource("2_egp5y")
 }],
 "loop": true,
 "name": &"flight",
@@ -52,7 +51,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_fh6x6")
+script = ExtResource("1_psvrb")
 
 [node name="BG" type="TextureRect" parent="."]
 layout_mode = 1
@@ -61,18 +60,16 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_7050j")
+texture = ExtResource("10_2nuxe")
 expand_mode = 1
 
 [node name="Player" type="Control" parent="."]
-z_index = 1
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
-script = ExtResource("3_sd13r")
+script = ExtResource("3_0vkb8")
 
 [node name="PlayerHealth" type="Control" parent="Player"]
-process_mode = 3
 anchors_preset = 0
 offset_left = 144.0
 offset_top = 40.0
@@ -90,8 +87,8 @@ offset_bottom = -10.0
 grow_vertical = 2
 scale = Vector2(1.5, 1.5)
 value = 50.0
-texture_under = ExtResource("4_emmwx")
-texture_progress = ExtResource("5_osipn")
+texture_under = ExtResource("11_3msy0")
+texture_progress = ExtResource("12_sqhfj")
 
 [node name="TextureRect" type="TextureRect" parent="Player/PlayerHealth"]
 layout_mode = 1
@@ -107,7 +104,7 @@ offset_bottom = 55.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("6_mpkcb")
+texture = ExtResource("11_u3b4j")
 
 [node name="PlayerActions" type="VBoxContainer" parent="Player"]
 layout_mode = 0
@@ -120,13 +117,10 @@ offset_bottom = 424.0
 layout_mode = 2
 text = "Breath Attack"
 
-[node name="PlayerAnim" type="Control" parent="Player"]
-anchors_preset = 0
-offset_left = 250.0
-offset_top = 250.0
-offset_right = 250.0
-offset_bottom = 250.0
-script = ExtResource("7_xtvvb")
+[node name="PlayerAnim" type="CanvasLayer" parent="Player"]
+offset = Vector2(250, 250)
+transform = Transform2D(1, 0, 0, 1, 250, 250)
+script = ExtResource("1_sna7r")
 
 [node name="Sprite" type="AnimatedSprite2D" parent="Player/PlayerAnim"]
 z_index = 5
@@ -139,13 +133,13 @@ flip_h = true
 visible = false
 z_index = 6
 scale = Vector2(0.2, 0.2)
-texture = ExtResource("11_wvy8d")
+texture = ExtResource("4_v8ixh")
 flip_h = true
 
 [node name="HeadCute" type="Sprite2D" parent="Player/PlayerAnim"]
 z_index = 6
 scale = Vector2(0.2, 0.2)
-texture = ExtResource("12_wqbva")
+texture = ExtResource("5_jmt54")
 flip_h = true
 
 [node name="AttackParticlesRight" type="GPUParticles2D" parent="Player/PlayerAnim"]
@@ -156,8 +150,8 @@ rotation = 0.389208
 scale = Vector2(0.4, 0.4)
 emitting = false
 amount = 30
-process_material = ExtResource("13_84u33")
-texture = ExtResource("14_rwpw4")
+process_material = ExtResource("9_num5g")
+texture = ExtResource("7_2mf4q")
 lifetime = 1.6
 local_coords = true
 
@@ -165,7 +159,7 @@ local_coords = true
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
-script = ExtResource("15_tjhde")
+script = ExtResource("15_so3pr")
 
 [node name="EnemyHealth" type="Control" parent="Enemy"]
 layout_mode = 2
@@ -186,8 +180,8 @@ offset_bottom = 10.0
 grow_vertical = 2
 scale = Vector2(1.5, 1.5)
 value = 50.0
-texture_under = ExtResource("16_iemn4")
-texture_progress = ExtResource("17_pdoc0")
+texture_under = ExtResource("15_dtpqw")
+texture_progress = ExtResource("16_e1fsv")
 
 [node name="TextureRect" type="TextureRect" parent="Enemy/EnemyHealth"]
 layout_mode = 1
@@ -203,16 +197,8 @@ offset_bottom = 75.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("6_mpkcb")
+texture = ExtResource("11_u3b4j")
 
 [node name="AiEnemy" type="Sprite2D" parent="Enemy"]
 position = Vector2(952, 440)
-texture = ExtResource("18_vhsc4")
-
-[node name="Announcer" type="Control" parent="."]
-anchors_preset = 0
-offset_left = 392.0
-offset_top = 376.0
-offset_right = 792.0
-offset_bottom = 676.0
-script = ExtResource("19_pgkto")
+texture = ExtResource("14_aolb5")

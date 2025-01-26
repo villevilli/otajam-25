@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://dkjp13lmjuwef"]
+
+[ext_resource type="Script" path="res://levels/level_components/combat_zone/combat_zone.gd" id="1_5obvm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xy2dg"]
+resource_local_to_scene = true
+size = Vector2(512, 512)
+
+[node name="CombatZone" type="Node2D"]
+script = ExtResource("1_5obvm")
+
+[node name="InnerArea" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InnerArea"]
+shape = SubResource("RectangleShape2D_xy2dg")
