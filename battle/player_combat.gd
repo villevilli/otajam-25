@@ -32,8 +32,9 @@ func _ready() -> void:
 func _take_damage(amount: int)->void:
 	health-=amount
 	_update_health()
-	if health<0:
-		battle_manager.PlayerDefeated.emit()
+	# Uncomment to enable losing fights.
+	#if health<0:
+	#	battle_manager.PlayerDefeated.emit()
 
 func _breath_attack()->void:
 	yield_turn()
@@ -45,7 +46,7 @@ func _breath_attack()->void:
 func _spit_attack()->void:
 	spit_cooldown=3
 	yield_turn()
-	player_anim.breath_attack()
+	player_anim.spit_attack()
 	print(battle_manager.get_enemy_health_fraction())
 	var enemy_hurt_bonus: int = clamp(round(3.0/battle_manager.get_enemy_health_fraction()),2,10)
 	print(enemy_hurt_bonus)
