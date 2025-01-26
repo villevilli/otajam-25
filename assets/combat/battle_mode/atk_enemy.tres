@@ -1,4 +1,4 @@
-[gd_resource type="ParticleProcessMaterial" format=3 uid="uid://bkkkh2phkmi6n"]
+[gd_resource type="ParticleProcessMaterial" format=3 uid="uid://dmmb18b4cjchk"]
 
 [resource]
 particle_flag_disable_z = true
@@ -6,12 +6,12 @@ angle_min = -360.0
 angle_max = 360.0
 spread = 15.0
 flatness = 0.371
-initial_velocity_min = 1100.0
-initial_velocity_max = 1100.0
+initial_velocity_min = 918.23
+initial_velocity_max = 1300.0
 angular_velocity_min = -100.0
 angular_velocity_max = 100.0
 gravity = Vector3(0, 0, 0)
 scale_min = 0.6
-hue_variation_min = -2.23517e-08
-hue_variation_max = -2.23517e-08
+hue_variation_min = -0.05
+hue_variation_max = 0.05
 anim_offset_max = 1.0

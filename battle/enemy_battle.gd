@@ -1,7 +1,9 @@
 extends Control
+class_name BattleEnemy
 
 @onready var battle_manager: BattleManager = $".."
 @onready var enemy_healthbar: TextureProgressBar = $"EnemyHealth/TextureProgressBar" 
+@onready var particles: GPUParticles2D = $"AttackParticles"
 
 var random: RandomNumberGenerator = RandomNumberGenerator.new()
 
@@ -35,6 +37,8 @@ func _update_health() -> void:
 func _base_attack()->void:
 	var damage: int = 3+ random.randi()%4
 	battle_manager.DamagePlayer.emit(damage)
+	particles.emitting=true
+	
 	
 func _die()->void:
 	battle_manager.EnemyDefeated.emit()
