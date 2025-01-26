@@ -42,8 +42,8 @@ func deserialize(dict: Dictionary) -> void:
 	quests_changed.emit()
 
 func get_quests(dict: Dictionary) -> Quest:
-	if dict["is_combat_quest"]:
-		return (Combat_Quest.from_serialized(dict))
+	if dict.has("is_combat_quest"):
+		return (Combat_Quest.from_serialized_combat_quest(dict))
 	else:
 		return (Quest.from_serialized(dict))
 

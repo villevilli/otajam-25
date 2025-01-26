@@ -94,4 +94,4 @@ visible = false
 position = Vector2(845, 617)
 dialog = ExtResource("11_airte")
 required_quest = &"ReturnToChararas"
-excluded_by_quest = &"InvestigateWeirdNoise"
+excluded_by_quest = &"KillAi"
