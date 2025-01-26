@@ -5,6 +5,9 @@ extends Node2D
 @onready var level: Level = $".."
 @onready var area: Area2D = $"InnerArea"
 
+@export var required_quest: StringName = ""
+@export var excluded_by_quest: StringName = ""
+
 func _ready()->void:
 	area.body_entered.connect(_on_inner_area_body_entered)
 
@@ -17,6 +20,12 @@ func _ready()->void:
 		shape.size=new_size
 
 func _on_inner_area_body_entered(_body: Node2D) -> void:
+	if required_quest && QuestManager.get_quest_by_name(required_quest) == null:
+		print("required_quest null")
+		return
+
+	if excluded_by_quest && QuestManager.get_quest_by_name(excluded_by_quest) != null:
+		return
 	print("entered combat zone")
 	area.monitoring=false
 	level.start_battle()
