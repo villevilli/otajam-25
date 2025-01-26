@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://cnimwoo4t1jih"]
+[gd_scene load_steps=15 format=4 uid="uid://cnimwoo4t1jih"]
 
 [ext_resource type="Script" path="res://levels/level.gd" id="1_mname"]
 [ext_resource type="TileSet" uid="uid://d3b4rsnwb4ahw" path="res://assets/levels/level_tiles.tres" id="2_kyhyk"]
@@ -13,6 +13,7 @@
 [ext_resource type="Resource" uid="uid://c3mw0gihjemux" path="res://levels/levels/AiDialogOne.tres" id="11_yaa4c"]
 [ext_resource type="PackedScene" uid="uid://dkjp13lmjuwef" path="res://levels/level_components/combat_zone/combatZone.tscn" id="12_755v2"]
 [ext_resource type="Texture2D" uid="uid://qfll73t8j4uu" path="res://assets/Ai/ai.png" id="13_lm11k"]
+[ext_resource type="Texture2D" uid="uid://no3t5iy1gd2u" path="res://assets/paintbucket.png" id="14_m7in0"]
 
 [node name="ExampleLevel" type="Node2D"]
 script = ExtResource("1_mname")
@@ -84,3 +85,8 @@ collider_size = Vector2(512, 1500)
 position = Vector2(3185, 611)
 scale = Vector2(0.3875, 0.3875)
 texture = ExtResource("13_lm11k")
+
+[node name="Paintbucket" type="Sprite2D" parent="."]
+position = Vector2(3056, 519)
+scale = Vector2(0.161875, 0.161875)
+texture = ExtResource("14_m7in0")
