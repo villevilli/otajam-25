@@ -53,7 +53,7 @@ offset_top = 953.0
 offset_right = 1535.0
 offset_bottom = 1033.0
 theme_override_font_sizes/font_size = 64
-text = "Open menu by pressin (esc)"
+text = "Open menu by pressin (m)"
 
 [node name="Label3" type="Label" parent="."]
 offset_left = 933.0
