@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="StraightDialog" load_steps=17 format=3 uid="uid://bd3kpcm84m2c7"]
+[gd_resource type="Resource" script_class="StraightDialog" load_steps=17 format=3 uid="uid://ds4okv7a70mqw"]
 
 [ext_resource type="Script" path="res://quests/dialog_system/dialog_nodes/straight_dialog.gd" id="1_odehv"]
 [ext_resource type="Script" path="res://quests/dialog_system/dialog_nodes/end_dialog.gd" id="1_ogmx1"]

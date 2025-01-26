@@ -11,7 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://cqho86jxe2wor" path="res://assets/combat/bblset.png" id="9_qtwiq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5qm4w"]
-size = Vector2(384, 255)
+size = Vector2(384, 239.5)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_l6rav"]
 animations = [{
@@ -52,7 +52,7 @@ motion_mode = 1
 script = ExtResource("2_2uicw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 40)
+position = Vector2(0, -31.75)
 shape = SubResource("RectangleShape2D_5qm4w")
 
 [node name="Shadow" type="Sprite2D" parent="."]

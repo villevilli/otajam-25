@@ -30,7 +30,7 @@ func _ready() -> void:
 	get_tree().paused = true
 	
 func _input(event: InputEvent)->void:
-	if event.is_action_pressed("dialogue_advance"):
+	if event.is_action_pressed("ui_accept"):
 		dialog_clicked()
 
 func _process(_delta: float) -> void:
