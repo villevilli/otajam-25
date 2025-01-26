@@ -7,6 +7,9 @@ class_name Quest
 var is_active: bool = false
 var is_finished: bool = false
 
+func get_description() -> String:
+	return quest_description
+
 func serialize() -> Dictionary:
 	return {
 		"quest_name": quest_name,

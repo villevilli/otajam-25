@@ -8,4 +8,6 @@ class_name QuestItem
 
 func _ready() -> void:
 	quest_name_label.text = quest.quest_name.capitalize()
-	quest_description_label.text = quest.quest_description
+
+func _process(_delta: float) -> void:
+	quest_description_label.text = quest.get_description()

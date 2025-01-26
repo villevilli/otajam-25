@@ -36,12 +36,18 @@ func deserialize(dict: Dictionary) -> void:
 	active_quests.clear()
 	completed_quests.clear()
 
-	active_quests.append_array((dict["active_quests"] as Array[Dictionary]).map(Quest.from_serialized))
-	completed_quests.append_array((dict["completed_quests"] as Array[Dictionary]).map(Quest.from_serialized))
+	active_quests.append_array((dict["active_quests"] as Array[Dictionary]).map(get_quests))
+	completed_quests.append_array((dict["completed_quests"] as Array[Dictionary]).map(get_quests))
 
 	quests_changed.emit()
 
-	
+func get_quests(dict: Dictionary) -> Quest:
+	if dict["is_combat_quest"]:
+		return (Combat_Quest.from_serialized(dict))
+	else:
+		return (Quest.from_serialized(dict))
+
+
 func get_quest_by_name(quest_name: StringName) -> Quest:
 	for quest in active_quests:
 		if quest.quest_name == quest_name:

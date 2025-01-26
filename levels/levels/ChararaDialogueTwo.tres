@@ -1,22 +1,23 @@
-[gd_resource type="Resource" script_class="StraightDialog" load_steps=15 format=3 uid="uid://ds4okv7a70mqw"]
+[gd_resource type="Resource" script_class="StraightDialog" load_steps=15 format=3 uid="uid://bd3kpcm84m2c7"]
 
 [ext_resource type="Script" path="res://quests/dialog_system/dialog_nodes/straight_dialog.gd" id="1_odehv"]
 [ext_resource type="Script" path="res://quests/dialog_system/dialog_nodes/end_dialog.gd" id="1_ogmx1"]
 [ext_resource type="Texture2D" uid="uid://dd6jndub4sjbm" path="res://assets/Portraits/chrara.png" id="2_fh416"]
 [ext_resource type="Texture2D" uid="uid://0uxsh371dexr" path="res://assets/Portraits/player_portrait.png" id="2_neiu6"]
-[ext_resource type="Script" path="res://quests/quest.gd" id="3_h2rdg"]
+[ext_resource type="Script" path="res://quests/combat_quest.gd" id="3_kj127"]
 [ext_resource type="Texture2D" uid="uid://ccjhpvsi4aamb" path="res://assets/Portraits/dargon.png" id="4_6nh0y"]
 
-[sub_resource type="Resource" id="Resource_tly77"]
-script = ExtResource("3_h2rdg")
-quest_name = &"InvestigateWeirdNoise"
-quest_description = "Weird noises can be heard from ontop of the village. You should go and investigate."
+[sub_resource type="Resource" id="Resource_u7dwe"]
+script = ExtResource("3_kj127")
+kill_count_requirement = 3
+quest_name = &"KillAiAbove"
+quest_description = "Go and kill some ai bitches! (like charara requested)"
 
 [sub_resource type="Resource" id="Resource_u3qru"]
 script = ExtResource("1_ogmx1")
 dialog_text = "Charara:
 Well great. I heard some weird noises coming from the road atop, if you want you could go and look that way."
-start_quest = SubResource("Resource_tly77")
+start_quest = SubResource("Resource_u7dwe")
 finish_quest_name = &"ReturnToChararas"
 portrait = ExtResource("2_fh416")
 
