@@ -1,0 +1,64 @@
+[gd_resource type="Resource" script_class="StraightDialog" load_steps=13 format=3 uid="uid://c3mw0gihjemux"]
+
+[ext_resource type="Texture2D" uid="uid://0uxsh371dexr" path="res://assets/Portraits/player_portrait.png" id="1_v1xte"]
+[ext_resource type="Script" path="res://quests/dialog_system/dialog_nodes/end_dialog.gd" id="2_bv36s"]
+[ext_resource type="Script" path="res://quests/dialog_system/dialog_nodes/straight_dialog.gd" id="2_gs11w"]
+[ext_resource type="Script" path="res://quests/quest.gd" id="3_ysrt2"]
+[ext_resource type="Texture2D" uid="uid://bbs6gi3a4vwht" path="res://assets/Portraits/ai_portrait.png" id="5_he8a5"]
+
+[sub_resource type="Resource" id="Resource_3cnah"]
+script = ExtResource("3_ysrt2")
+quest_name = &"ReturnToChararas"
+quest_description = "Return chararas paint back to her, and inform her of who stole her stuff."
+
+[sub_resource type="Resource" id="Resource_w46bg"]
+script = ExtResource("2_bv36s")
+dialog_text = "Player:
+I'm taking chararas paint, and bringing it back this moment!"
+start_quest = SubResource("Resource_3cnah")
+finish_quest_name = &"FindChararasPaint"
+portrait = ExtResource("1_v1xte")
+
+[sub_resource type="Resource" id="Resource_idgnr"]
+script = ExtResource("2_gs11w")
+dialog_text = "Player:
+Thats not nice!
+You shouldn't just go and steal everyones property and use it all without permission, even if its laying in their yards."
+next_dialog = SubResource("Resource_w46bg")
+portrait = ExtResource("1_v1xte")
+
+[sub_resource type="Resource" id="Resource_i4m8e"]
+script = ExtResource("2_gs11w")
+dialog_text = "AI:
+Within just this small container, I can contain 100x the creative output of this small spec-of-dust village, there will nolonger be a need for all you artists."
+next_dialog = SubResource("Resource_idgnr")
+portrait = ExtResource("5_he8a5")
+
+[sub_resource type="Resource" id="Resource_nbfow"]
+script = ExtResource("2_gs11w")
+dialog_text = "AI:
+And cutting-edge innovations enabling never-before seen ground-breaking innovation accross all creative fields"
+next_dialog = SubResource("Resource_i4m8e")
+portrait = ExtResource("5_he8a5")
+
+[sub_resource type="Resource" id="Resource_eh50l"]
+script = ExtResource("2_gs11w")
+dialog_text = "AI:
+I'm supercharged with revolutionary integrated cloud deep-llm generative ai powered creativity systems"
+next_dialog = SubResource("Resource_nbfow")
+portrait = ExtResource("5_he8a5")
+
+[sub_resource type="Resource" id="Resource_7747x"]
+script = ExtResource("2_gs11w")
+dialog_text = "???:
+Who? Me?
+Well, I'm AI ofcource!"
+next_dialog = SubResource("Resource_eh50l")
+portrait = ExtResource("5_he8a5")
+
+[resource]
+script = ExtResource("2_gs11w")
+dialog_text = "You:
+Who are you? Why have you taken Chararas paint?"
+next_dialog = SubResource("Resource_7747x")
+portrait = ExtResource("1_v1xte")
