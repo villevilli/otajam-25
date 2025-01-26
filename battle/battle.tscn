@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://bqhoq24op6iby"]
+[gd_scene load_steps=26 format=3 uid="uid://bqhoq24op6iby"]
 
 [ext_resource type="Script" path="res://battle/battle.gd" id="1_fh6x6"]
 [ext_resource type="Texture2D" uid="uid://bdex36ii237w3" path="res://assets/combat/backgroundBattle.png" id="2_7050j"]
@@ -14,12 +14,14 @@
 [ext_resource type="Texture2D" uid="uid://d10lsidb3tpq0" path="res://assets/Dargon_Head/dargon_cute.png" id="12_wqbva"]
 [ext_resource type="Material" uid="uid://bkkkh2phkmi6n" path="res://assets/combat/battle_mode/atk_bubbles_battle.tres" id="13_84u33"]
 [ext_resource type="Texture2D" uid="uid://cqho86jxe2wor" path="res://assets/combat/bblset.png" id="14_rwpw4"]
+[ext_resource type="Material" uid="uid://ct6dpbw4x5akk" path="res://assets/combat/battle_mode/atk_spit.tres" id="15_fj3d1"]
 [ext_resource type="Script" path="res://battle/enemy_battle.gd" id="15_tjhde"]
 [ext_resource type="Texture2D" uid="uid://g5puv06thtba" path="res://assets/combat/battle_mode/HealthBarEnemy.png" id="16_iemn4"]
 [ext_resource type="Texture2D" uid="uid://bmr4vo51yhufq" path="res://assets/combat/battle_mode/HealthBarEnemyProgress.png" id="17_pdoc0"]
-[ext_resource type="Texture2D" uid="uid://c6uexvgqnv32j" path="res://assets/combat/AIEnemy.png" id="18_vhsc4"]
+[ext_resource type="Texture2D" uid="uid://qfll73t8j4uu" path="res://assets/Ai/ai.png" id="18_umxbr"]
 [ext_resource type="Texture2D" uid="uid://l5pboo2hi2id" path="res://assets/combat/bblset_mono.png" id="19_m057r"]
 [ext_resource type="Script" path="res://battle/announcer.gd" id="19_pgkto"]
+[ext_resource type="Texture2D" uid="uid://v4878xmquo7y" path="res://assets/Ai/ai_attacc.png" id="19_qa2vw"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_cty4h"]
 animations = [{
@@ -46,6 +48,28 @@ particles_animation = true
 particles_anim_h_frames = 3
 particles_anim_v_frames = 1
 particles_anim_loop = false
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kduej"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("19_qa2vw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_umxbr")
+}],
+"loop": false,
+"name": &"attack",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("18_umxbr")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="Battle" type="Panel"]
 anchors_preset = 15
@@ -122,7 +146,6 @@ layout_mode = 2
 text = "Breath Attack"
 
 [node name="SpitAttack" type="Button" parent="Player/PlayerActions"]
-visible = false
 layout_mode = 2
 text = "Projectile"
 
@@ -154,7 +177,7 @@ scale = Vector2(0.2, 0.2)
 texture = ExtResource("12_wqbva")
 flip_h = true
 
-[node name="AttackParticlesRight" type="GPUParticles2D" parent="Player/PlayerAnim"]
+[node name="AttackBreath" type="GPUParticles2D" parent="Player/PlayerAnim"]
 z_index = 4
 material = SubResource("CanvasItemMaterial_nhe18")
 position = Vector2(104, -42)
@@ -165,6 +188,21 @@ amount = 30
 process_material = ExtResource("13_84u33")
 texture = ExtResource("14_rwpw4")
 lifetime = 1.6
+local_coords = true
+
+[node name="AttackSpit" type="GPUParticles2D" parent="Player/PlayerAnim"]
+z_index = 4
+material = SubResource("CanvasItemMaterial_nhe18")
+position = Vector2(104, -42)
+rotation = 0.174533
+scale = Vector2(0.4, 0.4)
+emitting = false
+amount = 15
+process_material = ExtResource("15_fj3d1")
+texture = ExtResource("14_rwpw4")
+lifetime = 0.9
+one_shot = true
+explosiveness = 1.0
 local_coords = true
 
 [node name="Enemy" type="Control" parent="."]
@@ -211,15 +249,18 @@ grow_vertical = 2
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("6_mpkcb")
 
-[node name="AiEnemy" type="Sprite2D" parent="Enemy"]
-position = Vector2(952, 440)
-texture = ExtResource("18_vhsc4")
+[node name="AiEnemy" type="AnimatedSprite2D" parent="Enemy"]
+position = Vector2(968, 464)
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_kduej")
+animation = &"attack"
+frame = 1
 
 [node name="AttackParticles" type="GPUParticles2D" parent="Enemy"]
 z_index = 4
 material = SubResource("CanvasItemMaterial_nhe18")
-position = Vector2(920, 488)
-rotation = 3.49066
+position = Vector2(944, 392)
+rotation = 3.42854
 scale = Vector2(0.4, 0.4)
 emitting = false
 amount = 15
