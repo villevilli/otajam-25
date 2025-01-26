@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://wxv3cetivhhg" path="res://characters/player/player.tscn" id="3_5egn8"]
 [ext_resource type="PackedScene" uid="uid://famg5e8r235r" path="res://levels/level_components/camera/camera.tscn" id="4_wl1xi"]
 [ext_resource type="PackedScene" uid="uid://b42c3rxpw863l" path="res://levels/level_components/level_connector/level_connector.tscn" id="5_blkve"]
-[ext_resource type="PackedScene" path="res://user_interface/EscapeMenu.tscn" id="6_2abeo"]
+[ext_resource type="PackedScene" uid="uid://b4xv0neyy1tdi" path="res://user_interface/EscapeMenu.tscn" id="6_2abeo"]
 
 [node name="ExampleLevel" type="Node2D"]
 script = ExtResource("1_bpg7r")
