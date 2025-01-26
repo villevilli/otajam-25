@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=4 uid="uid://bhdg4k234kbld"]
+[gd_scene load_steps=13 format=4 uid="uid://bhdg4k234kbld"]
 
 [ext_resource type="Script" path="res://levels/level.gd" id="1_1ajge"]
 [ext_resource type="TileSet" uid="uid://d3b4rsnwb4ahw" path="res://assets/levels/level_tiles.tres" id="2_0e641"]
@@ -10,7 +10,8 @@
 [ext_resource type="PackedScene" path="res://user_interface/EscapeMenu.tscn" id="8_682ln"]
 [ext_resource type="Texture2D" uid="uid://b4psibxr2p5ij" path="res://assets/paint_stains/paint_stains_2.png" id="9_qn0dg"]
 [ext_resource type="Texture2D" uid="uid://b6tjijodcjf5o" path="res://assets/paint_stains/paint_stains_3.png" id="10_257p3"]
-[ext_resource type="Resource" uid="uid://ds4okv7a70mqw" path="res://levels/levels/ChararaDialogueTwo.tres" id="11_airte"]
+[ext_resource type="Resource" uid="uid://bd3kpcm84m2c7" path="res://levels/levels/ChararaDialogueTwo.tres" id="11_airte"]
+[ext_resource type="Texture2D" uid="uid://dvpfnt62nh50p" path="res://assets/charara.png" id="12_l48rk"]
 
 [node name="ExampleLevel2" type="Node2D"]
 script = ExtResource("1_1ajge")
@@ -95,3 +96,8 @@ position = Vector2(845, 617)
 dialog = ExtResource("11_airte")
 required_quest = &"ReturnToChararas"
 excluded_by_quest = &"KillAi"
+
+[node name="Charara" type="Sprite2D" parent="."]
+position = Vector2(947, 515)
+scale = Vector2(0.34625, 0.34625)
+texture = ExtResource("12_l48rk")
