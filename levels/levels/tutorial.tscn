@@ -36,7 +36,7 @@ visible = false
 [node name="Label" type="Label" parent="CanvasLayer"]
 offset_right = 40.0
 offset_bottom = 21.0
-text = "Press M to open menu"
+text = "Press M to open menu and view quests"
 
 [node name="ConnectorVillage" parent="." instance=ExtResource("5_tdany")]
 position = Vector2(2619, 633)
