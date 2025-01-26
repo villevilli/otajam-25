@@ -32,8 +32,9 @@ func _ready() -> void:
 func _take_damage(amount: int)->void:
 	health-=amount
 	_update_health()
-	if health<0:
-		battle_manager.PlayerDefeated.emit()
+	# Uncomment to enable losing fights.
+	#if health<0:
+	#	battle_manager.PlayerDefeated.emit()
 
 func _breath_attack()->void:
 	yield_turn()
