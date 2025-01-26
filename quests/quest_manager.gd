@@ -62,7 +62,8 @@ func _ready() -> void:
 
 func _quest_finished(quest: Quest) -> void:
 	for i in range(len(active_quests)):
-		if active_quests[i] == quest: active_quests.remove_at(i)
+		if active_quests[i] == quest:
+			completed_quests.append(active_quests.pop_at(i))
 
 func _quest_started(quest: Quest) -> void:
 	active_quests.append(quest)

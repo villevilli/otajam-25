@@ -22,5 +22,5 @@ func _on_load_game_pressed() -> void:
 
 func _file_selected(path: String) -> void:
 	print(path)
-	LevelManager.levelchange.emit("example_level", "default")
+	LevelManager.levelchange.emit("village", "default")
 	SaveMager.load_game(path)

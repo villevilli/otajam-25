@@ -26,7 +26,7 @@ func _regenerate_quest_lists() -> void:
 
 
 func _quest_started(quest: Quest) -> void:
-	_add_quest(quest, finished_quest_container)
+	_add_quest(quest, active_quest_container)
 
 func _quest_finished(quest: Quest) -> void:
 	_finish_quest(quest)

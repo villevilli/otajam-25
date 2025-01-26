@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="StraightDialog" load_steps=11 format=3 uid="uid://bjqxluuoedt75"]
+[gd_resource type="Resource" script_class="StraightDialog" load_steps=11 format=3 uid="uid://c7tyh4qlc2vmm"]
 
 [ext_resource type="Texture2D" uid="uid://dd6jndub4sjbm" path="res://assets/Portraits/chrara.png" id="1_rxf6r"]
 [ext_resource type="Script" path="res://quests/dialog_system/dialog_nodes/end_dialog.gd" id="2_b2rdv"]

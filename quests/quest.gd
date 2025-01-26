@@ -48,7 +48,7 @@ func _self_finished() -> void:
 
 ## Function to finish this quest
 func complete() -> void:
-	QuestManager.emit_signal("quest_completed", self)
+	QuestManager.emit_signal("quest_finished", self)
 
 ## Function to start this quest
 func start() -> void:
