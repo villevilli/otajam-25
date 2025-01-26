@@ -6,11 +6,11 @@
 [ext_resource type="PackedScene" uid="uid://famg5e8r235r" path="res://levels/level_components/camera/camera.tscn" id="4_gmcjv"]
 [ext_resource type="PackedScene" uid="uid://b42c3rxpw863l" path="res://levels/level_components/level_connector/level_connector.tscn" id="5_t35fr"]
 [ext_resource type="PackedScene" uid="uid://dm8an5cotosta" path="res://levels/level_components/enter_dialog_area/dialog_area.tscn" id="6_p1fnk"]
-[ext_resource type="Resource" uid="uid://c7tyh4qlc2vmm" path="res://levels/levels/ChararaDialogueOne.tres" id="7_n2d47"]
-[ext_resource type="PackedScene" uid="uid://b4xv0neyy1tdi" path="res://user_interface/EscapeMenu.tscn" id="8_682ln"]
+[ext_resource type="Resource" uid="uid://bjqxluuoedt75" path="res://levels/levels/ChararaDialogueOne.tres" id="7_n2d47"]
+[ext_resource type="PackedScene" path="res://user_interface/EscapeMenu.tscn" id="8_682ln"]
 [ext_resource type="Texture2D" uid="uid://b4psibxr2p5ij" path="res://assets/paint_stains/paint_stains_2.png" id="9_qn0dg"]
 [ext_resource type="Texture2D" uid="uid://b6tjijodcjf5o" path="res://assets/paint_stains/paint_stains_3.png" id="10_257p3"]
-[ext_resource type="Resource" uid="uid://bd3kpcm84m2c7" path="res://levels/levels/ChararaDialogueTwo.tres" id="11_airte"]
+[ext_resource type="Resource" uid="uid://ds4okv7a70mqw" path="res://levels/levels/ChararaDialogueTwo.tres" id="11_airte"]
 
 [node name="ExampleLevel2" type="Node2D"]
 script = ExtResource("1_1ajge")
